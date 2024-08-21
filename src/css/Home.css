@@ -5,12 +5,15 @@
     align-items: center;
     height: 100vh;
     overflow: hidden; /* Ensure no scrollbars if video is larger */
-    margin-top: 60px; /* Adjust based on your default navbar height */
     position: relative; /* Required for absolute positioning of overlay */
     background-image: url("../assets/Mia 9.JPG"); /* Add your background image */
     background-size: cover; /* Cover the entire section */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent image from repeating */
+}
+
+.events {
+    margin-top: 60px;
 }
 
 /* Overlay with blur and darken effect */
