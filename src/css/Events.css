@@ -1,130 +1,57 @@
-/* General Styles for Events Page */
 .events-page {
-    position: relative; /* Make sure the pseudo-element is positioned correctly */
-    margin-top: 120px; /* Adjust this value to push the content further down, based on your navbar height and desired spacing */
-    background: url("../assets/Mia 14.JPG") no-repeat center top / cover,
-        /* Fix the background image at the top */
-            linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0.5) 1px,
-                transparent 1px,
-                transparent 33%,
-                rgba(0, 0, 0, 0.5) 34px,
-                transparent 34px,
-                transparent 67%,
-                rgba(0, 0, 0, 0.5) 68px,
-                transparent 68px
-            );
-    background-attachment: fixed; /* Ensure the background image is fixed */
-    background-size: cover; /* Ensure the background image covers the entire section */
-    color: white; /* White text color for contrast */
-    padding: 20px; /* Optional padding for spacing */
-    min-height: calc(
-        100vh - 120px
-    ); /* Adjust this based on your navbar height */
-    box-sizing: border-box; /* Ensure padding is included in height calculations */
+    padding: 20px;
+    background-color: #1c1c1c; /* Darker background */
+    color: #b8a960; /* Darker accent color for text */
 }
 
-/* Add a pseudo-element for the blur effect */
-.events-page::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Darken overlay with reduced opacity */
-    backdrop-filter: blur(8px); /* Apply blur effect */
-    z-index: 1; /* Ensure the blur overlay sits above the background image but below content */
+h1 {
+    color: #b8a960; /* Darker accent color for the title */
+    font-size: 2rem; /* Adjust title size */
 }
 
-/* Ensure the content appears above the blur overlay */
-.events-page > * {
-    position: relative;
-    z-index: 2; /* Ensure content appears above the blur overlay */
+.event-card {
+    border: 1px solid #b8a960; /* Darker border color */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add transition for shadow */
+    background-color: #1c1c1c; /* Card background matching page background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Subtle shadow */
 }
 
-/* Form Styling */
-.events-page h1 {
-    margin-bottom: 20px;
+.event-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8); /* More pronounced shadow on hover */
 }
 
-.events-page .form-group {
-    margin-bottom: 1rem; /* Space between form groups */
+.event-card img {
+    object-fit: cover;
+    height: 200px; /* Adjust height as needed */
+    border-bottom: 1px solid #b8a960; /* Darker border under image */
 }
 
-.events-page .form-group label {
-    display: block; /* Ensure labels take full width */
-    margin-bottom: 0.5rem; /* Space between label and form control */
-    text-align: left; /* Align text to the left */
-    color: rgb(183, 169, 90); /* Gold text color for labels */
+.event-card .card-body {
+    text-align: center;
+    color: #b8a960; /* Darker accent color for text */
 }
 
-.events-page .form-control {
-    background-color: #171616; /* Black background for form fields */
-    color: rgb(183, 169, 90); /* Gold text color for form fields */
-    border: 1px solid rgb(183, 169, 90); /* Gold border for form fields */
-}
-
-.events-page .form-control::placeholder {
-    color: rgb(183, 169, 90); /* Light gray placeholder text */
-}
-
-.events-page .btn-primary {
-    background-color: rgb(183, 169, 90); /* Dark button background */
-    border-color: #333; /* Dark button border */
-    color: black;
+.card-title {
+    font-size: 1rem; /* Smaller title size */
     font-weight: bold;
 }
 
-.events-page .btn-primary:hover {
-    background-color: #555; /* Lighter dark button background on hover */
-    border-color: #555; /* Lighter dark button border on hover */
+.card-text {
+    font-size: 0.9rem; /* Smaller text size */
+    margin-bottom: 0.5rem;
 }
 
-/* Events Page */
-.events-page {
-    padding: 20px;
-}
-
-.events-page h1 {
-    margin-bottom: 20px;
-}
-
-.events-page Form {
-    max-width: 600px;
-    margin: auto;
-}
-
-.events-page Form .form-group {
-    margin-bottom: 15px;
-}
-
-.events-page Button {
-    margin-top: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar-logo {
-        width: 80px;
+@media (max-width: 576px) {
+    .event-card img {
+        height: 150px; /* Adjust height for smaller screens */
     }
-
-    .info-boxes {
-        flex-direction: column;
+    .card-title {
+        font-size: 1rem; /* Smaller title size on small screens */
     }
-
-    .info-box {
-        width: 90%;
-        margin: 10px auto;
-    }
-
-    .contact-box {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .events-page Form {
-        width: 100%;
+    .card-text {
+        font-size: 0.8rem; /* Smaller text size on small screens */
     }
 }

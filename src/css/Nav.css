@@ -1,6 +1,6 @@
-/* Initial state with larger logo */
+/* App.css */
 .navbar {
-    background-color: #000;
+    background-color: #000; /* Black background */
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -10,7 +10,7 @@
     top: 0;
     left: 0;
     z-index: 1000; /* Ensure it stays on top */
-    transition: padding 0.3s ease; /* Smooth transition for padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: add shadow for better visibility */
 }
 
 .navbar-content {
@@ -31,31 +31,26 @@
     margin-right: 20px;
 }
 
-.nav-links a {
+.nav-link {
     color: #fff; /* White text */
     text-decoration: none;
     font-size: 18px;
-    transition: all 0.3s ease;
+}
+
+.nav-link.active {
+    color: gold;
 }
 
 /* Hover effect */
-.nav-links a:hover {
+.nav-link:hover {
     color: gold;
-    font-weight: bold;
 }
 
 /* Logo styling */
 .navbar-logo {
-    max-height: 120px; /* Larger size initially */
+    max-height: 80px; /* Adjust size */
+    height: auto; /* Ensure height adjusts proportionally */
     object-fit: cover;
-    object-position: top;
-    height: 120px; /* Ensure height matches max-height */
-    transition: max-height 0.3s ease; /* Smooth transition for shrinking */
-}
-
-/* Shrinked logo state */
-.navbar.shrink .navbar-logo {
-    max-height: 50px; /* Smaller size when scrolled */
 }
 
 /* Responsive Design */
@@ -65,14 +60,15 @@
     }
 
     .nav-links {
-        flex-direction: row;
-    }
-
-    .navbar-logo {
-        max-height: 50px;
+        flex-direction: column; /* Stack links vertically on small screens */
+        align-items: center; /* Center align links */
     }
 
     .nav-links li {
-        margin-right: 15px;
+        margin: 10px 0; /* Adjust margin for vertical layout */
+    }
+
+    .navbar-logo {
+        max-height: 50px; /* Adjust logo size */
     }
 }

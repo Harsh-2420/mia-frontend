@@ -15,7 +15,22 @@
 .events {
     margin-top: 60px;
 }
-
+/* Overlay with blur and darken effect */
+.mia-logo-overlay {
+    position: absolute; /* Overlay needs to cover the section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(
+        0,
+        0,
+        0,
+        0.5
+    ); /* Darken overlay with slightly stronger effect */
+    backdrop-filter: blur(8px); /* Apply blur effect */
+    z-index: 1; /* Ensure the blur overlay sits above the background image */
+}
 /* Overlay with blur and darken effect */
 .video-overlay {
     position: absolute; /* Overlay needs to cover the section */
