@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Row, Col, Collapse } from "react-bootstrap"
+import { Row, Col, Collapse, Button } from "react-bootstrap"
 import {
     FaInstagram,
     FaEnvelope,
@@ -8,7 +8,7 @@ import {
     FaChevronUp,
 } from "react-icons/fa"
 import "bootstrap/dist/css/bootstrap.min.css"
-import "../css/Contact.css" // Import the updated CSS file
+import "../css/About.css"
 
 function About() {
     const [openLocation, setOpenLocation] = useState(false)
@@ -16,73 +16,36 @@ function About() {
 
     return (
         <div className="events-page">
-            <h1 className="page-title">ABOUT US</h1>
+            <h1 className="page-title">Welcome to Club Mia</h1>
             <Row>
                 <Col></Col>
-                <Col md={6} className="contact-box">
-                    <h5>Connect with Us</h5>
-                    <br />
-                    <div className="icons-container">
-                        <a
-                            href="mailto:info@nightclub.com"
-                            className="icon-link"
-                        >
-                            <FaEnvelope />
-                        </a>
-                        <a
-                            href="https://www.instagram.com/nightclub"
-                            className="icon-link"
-                        >
-                            <FaInstagram />
-                        </a>
-                        <a href="tel:+1234567890" className="icon-link">
-                            <FaPhone />
-                        </a>
-                    </div>
-                </Col>
-                <Col></Col>
-            </Row>
-            <Row>
-                <Col></Col>
-                <Col md={6} className="contact-box">
-                    <Row>
+                <Col md={6} className="about-contact-box">
+                    <Row className="text-center py-5">
                         <Col>
-                            <div
-                                className="collapsible-section"
-                                onClick={() => setOpenContact(!openContact)}
-                            >
-                                <span>Contact Number</span>
-                                {openContact ? (
-                                    <FaChevronUp />
-                                ) : (
-                                    <FaChevronDown />
-                                )}
-                            </div>
-                            <Collapse in={openContact}>
-                                <div id="contact-collapse">
-                                    <p>+123 456 7890</p>
-                                </div>
-                            </Collapse>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <div
-                                className="collapsible-section"
-                                onClick={() => setOpenLocation(!openLocation)}
-                            >
-                                <span>Location</span>
-                                {openLocation ? (
-                                    <FaChevronUp />
-                                ) : (
-                                    <FaChevronDown />
-                                )}
-                            </div>
-                            <Collapse in={openLocation}>
-                                <div id="location-collapse">
-                                    <p>123 Nightclub Avenue, Party City</p>
-                                </div>
-                            </Collapse>
+                            <h3 className="mb-4">
+                                Toronto's Ultimate Nightlife Destination
+                            </h3>
+                            <p className="lead mb-4">
+                                Located in the heart of downtown Toronto, Club
+                                Mia is where elegance meets excitement. Our
+                                venue is designed to cater to those who seek a
+                                premium atmosphere with high-energy, where every
+                                night is a celebration and every guest is
+                                treated like a VIP.
+                            </p>
+                            <p className="mb-4">
+                                Step inside and discover why we are the talk of
+                                Toronto’s nightlife scene. With custom-designed
+                                lights and the highest quality music systems,
+                                every detail at Club Mia is crafted to offer an
+                                unforgettable experience.
+                            </p>
+                            <span className="d-block mb-4">
+                                Come be a part of Club Mia
+                            </span>
+                            <Button variant="primary" href="/contact">
+                                Connect with Us
+                            </Button>
                         </Col>
                     </Row>
                 </Col>

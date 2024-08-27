@@ -73,3 +73,11 @@
     justify-content: center; /* Center icons horizontally */
     gap: 20px; /* Space between icons */
 }
+.event-feature-box {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1rem; /* Reduced font size */
+}

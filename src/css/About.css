@@ -33,12 +33,14 @@
 }
 
 /* Contact Box Styling */
-.contact-box {
+.about-contact-box {
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 20px;
+    padding: 40px;
     border-radius: 8px;
     margin-bottom: 20px;
-    font-size: 0.875rem; /* Reduced font size */
+    margin-top: 20px;
+    font-size: 1.1rem; /* Reduced font size */
+    width: 70%;
 }
 
 /* Custom Button Styling */

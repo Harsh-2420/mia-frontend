@@ -15,6 +15,8 @@ import Guestlist from "./components/Guestlist"
 import Packages from "./components/Packages"
 import logo from "./assets/mia-logo.png"
 
+import { Container, Row, Col } from "react-bootstrap"
+
 function App() {
     return (
         <Router>
@@ -81,8 +83,42 @@ function App() {
                     <Route path="/events" element={<Events />} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>
+                <Footer />
             </div>
         </Router>
+    )
+}
+
+const Footer = () => {
+    return (
+        <footer className="bg-dark text-white py-4">
+            <Container>
+                <Row>
+                    <Col md={4} className="text-center text-md-left">
+                        <img
+                            src={logo}
+                            alt="Company Logo"
+                            style={{ width: "150px" }}
+                        />
+                    </Col>
+                    <Col md={4} className="text-center text-md-left">
+                        <br></br>
+                        <p>244 Adelaide St W, Toronto</p>
+                    </Col>
+                    <Col md={4} className="text-center text-md-left">
+                        <br></br>
+                        <a
+                            href="https://www.google.com/maps/place/Club+Mia/@43.648357,-79.3889579,15z/data=!4m6!3m5!1s0x882b35784e767f29:0x4dfd9a75ec72064d!8m2!3d43.648357!4d-79.3889579!16s%2Fg%2F11y4_rfxvl?entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white"
+                        >
+                            Google Maps
+                        </a>
+                    </Col>
+                </Row>
+            </Container>
+        </footer>
     )
 }
 

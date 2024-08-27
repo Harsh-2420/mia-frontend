@@ -25,6 +25,18 @@ function Bottleservice() {
 
     return (
         <div className="events-page">
+            <h3>Elevate Your Experience with a Booth</h3>
+            <p style={{ margin: "5%" }}>
+                Looking to enjoy the night in style, a booth at Mia, ensures you
+                have a front-row seat to all the action. Our booths offer the
+                perfect blend of comfort, privacy, and exclusivity, making them
+                the ideal choice for those who want to experience the best of
+                Toronto nightlife.
+                <br></br>
+                <br></br>
+                To reserve your booth please fill out this form and one of the
+                team members will reach out to you.
+            </p>
             <Form onSubmit={handleSubmit} className="form-container">
                 <Form.Group controlId="formName">
                     <Form.Label>Name</Form.Label>
