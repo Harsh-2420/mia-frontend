@@ -11,65 +11,60 @@ import eventImg8 from "../assets/Mia 14.JPG"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../css/Events.css" // Ensure you have this CSS file
 
-const events = [
-    {
-        id: 1,
-        image: eventImg, // Replace with actual image paths
-        title: "Event 1",
-        description: "This is a brief description of Event 1.",
-        date: "2024-09-01",
-        cost: "$50",
-    },
-    {
-        id: 2,
-        image: eventImg2, // Replace with actual image paths
-        title: "Event 2",
-        description: "This is a brief description of Event 2.",
-        date: "2024-10-15",
-        cost: "$75",
-    },
-    {
-        id: 3,
-        image: eventImg3, // Replace with actual image paths
-        title: "Event 3",
-        description: "This is a brief description of Event 3.",
-        date: "2024-11-20",
-        cost: "$100",
-    },
-    {
-        id: 4,
-        image: eventImg4, // Replace with actual image paths
-        title: "Event 4",
-        description: "This is a brief description of Event 4.",
-        date: "2024-12-05",
-        cost: "$60",
-    },
-    {
-        id: 5,
-        image: eventImg5, // Replace with actual image paths
-        title: "Event 5",
-        description: "This is a brief description of Event 5.",
-        date: "2025-01-10",
-        cost: "$90",
-    },
-    {
-        id: 6,
-        image: eventImg6, // Replace with actual image paths
-        title: "Event 6",
-        description: "This is a brief description of Event 6.",
-        date: "2025-02-14",
-        cost: "$70",
-    },
-    {
-        id: 7,
-        image: eventImg7, // Replace with actual image paths
-        title: "Event 7",
-        description: "This is a brief description of Event 7.",
-        date: "2025-03-20",
-        cost: "$85",
-    },
-]
+// Public bucket where events.json and event images live
+const BUCKET_URL = "https://mia-website-data.storage.googleapis.com";
+
+/**
+ * @typedef {Object} Event
+ * @property {string} title - title of the event
+ * @property {string} desc - event description
+ * @property {string} time - event date & time string (Oct 31, 9 PM)
+ * @property {string} image - image file name (Must be fetched seperately. Just set img src to 'BUCKET_URL/image')
+ */
+
+/**
+ * @typedef {Object} EventManifest
+ * @property {Array<Event>} events - List of events
+ */
+
+/**
+ * Download the event manifest from the backend. If there's an error, it'll return an empty manifest
+ * @returns {EventManifest} downloaded event manifest
+ */
+async function DownloadEventsManifest() {
+	try {
+		const res = await fetch(`${BUCKET_URL}/events.json`);
+		if (res.status !== 200) {
+			console.log(`Failed to download event manifest - ${String(res.body)}`);
+			return {};
+		}
+
+		const manifest = await res.json();
+		return manifest;
+	} catch (err) {
+		console.log(`Error downloading event manifest - ${err}`);
+		return {};
+	}
+}
+
 function Events() {
+	const [events, setEvents] = React.useState([]);
+
+	React.useEffect(() => {
+		async function FetchEvents() {
+            let downloadedEvents = [];
+			const manifest = await DownloadEventsManifest();
+            if ("events" in manifest)
+            {
+                downloadedEvents = manifest["events"];
+            }
+
+			setEvents(downloadedEvents);
+		}
+
+		FetchEvents();
+	}, []);
+
     return (
         <div className="events-page">
             <Row
@@ -80,13 +75,13 @@ function Events() {
                 className="g-4"
                 style={{ margin: "5%" }}
             >
-                {events.map((event) => (
-                    <Col key={event.id}>
+                {events.map((event, index) => (
+                    <Col key={index}>
                         <Card
                             className="event-card"
                             style={{ margin: "5%", height: "100%" }}
                         >
-                            <Card.Img variant="top" src={event.image} />
+                            <Card.Img variant="top" src={`${BUCKET_URL}/${event.image}`} />
                             <Card.Body
                                 style={{
                                     backgroundColor: "black",
@@ -102,9 +97,9 @@ function Events() {
                                 >
                                     {event.title}
                                 </Card.Title>
-                                <Card.Text>{event.description}</Card.Text>
-                                <Card.Text>Date: {event.date}</Card.Text>
-                                <Card.Text>Cost: {event.cost}</Card.Text>
+                                <Card.Text>{event.desc}</Card.Text>
+                                <Card.Text>Date: {event.time}</Card.Text>
+                                <Card.Text>Cost: $50</Card.Text>
 
                                 <div className="event-card-button">
                                     Learn More
