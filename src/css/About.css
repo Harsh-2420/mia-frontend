@@ -1,77 +1,77 @@
 /* Events Page Background */
 .events-page {
-    position: relative;
-    margin-top: 120px;
-    background: url("../assets/Mia 14.JPG") no-repeat center top / cover,
-        linear-gradient(
-            to right,
-            rgba(0, 0, 0, 0.5) 1px,
-            transparent 1px,
-            transparent 33%,
-            rgba(0, 0, 0, 0.5) 34px,
-            transparent 34px,
-            transparent 67%,
-            rgba(0, 0, 0, 0.5) 68px,
-            transparent 68px
-        );
-    background-attachment: fixed;
-    background-size: cover;
-    color: white;
-    padding: 20px;
-    min-height: calc(100vh - 120px);
-    box-sizing: border-box;
-    backdrop-filter: blur(5px);
-    background-blur: rgba(0, 0, 0, 0.6);
+  position: relative;
+  margin-top: 120px;
+  background: url("../assets/Mia 14.JPG") no-repeat center top / cover,
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5) 1px,
+      transparent 1px,
+      transparent 33%,
+      rgba(0, 0, 0, 0.5) 34px,
+      transparent 34px,
+      transparent 67%,
+      rgba(0, 0, 0, 0.5) 68px,
+      transparent 68px
+    );
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  padding: 20px;
+  min-height: calc(100vh - 120px);
+  box-sizing: border-box;
+  backdrop-filter: blur(5px);
+  background-blur: rgba(0, 0, 0, 0.6);
 }
 
 /* Page Title Styling */
 .page-title {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2.5rem; /* Title size remains the same */
-    color: rgb(183, 169, 90);
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem; /* Title size remains the same */
+  color: rgb(183, 169, 90);
 }
 
 /* Contact Box Styling */
 .about-contact-box {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-size: 1.1rem; /* Reduced font size */
-    width: 70%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 1.1rem; /* Reduced font size */
+  width: 70%;
 }
 
 /* Custom Button Styling */
 .icon-link {
-    color: rgb(183, 169, 90);
-    font-size: 24px; /* Adjusted icon size */
-    margin: 0 15px;
-    text-decoration: none;
+  color: rgb(183, 169, 90);
+  font-size: 24px; /* Adjusted icon size */
+  margin: 0 15px;
+  text-decoration: none;
 }
 
 .icon-link:hover {
-    color: #fff;
+  color: #fff;
 }
 
 /* Collapsible Section Styling */
 .collapsible-section {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    margin-bottom: 20px;
-    font-size: 1.25rem; /* Slightly larger font size for collapsible sections */
-    color: rgb(183, 169, 90);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 1.25rem; /* Slightly larger font size for collapsible sections */
+  color: rgb(183, 169, 90);
 }
 
 .collapsible-section svg {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 /* Icons Container Centering */
 .icons-container {
-    display: flex;
-    justify-content: center; /* Center icons horizontally */
-    gap: 20px; /* Space between icons */
+  display: flex;
+  justify-content: center; /* Center icons horizontally */
+  gap: 20px; /* Space between icons */
 }
