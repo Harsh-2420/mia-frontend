@@ -163,7 +163,8 @@ function Hero() {
 
 function MiaCarousel() {
     return (
-        <section className="section carousel-section">
+        <section className="carousel-section">
+            <div className="carousel-overlay"></div>
             <Carousel
                 indicators={false}
                 controls={true}

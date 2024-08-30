@@ -62,21 +62,6 @@ body {
     box-sizing: border-box;
 }
 
-.section {
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 40px 20px;
-}
-
-/* Optional: If you need to ensure the background image scales well on very small screens */
-@media (max-width: 576px) {
-    .carousel-section {
-        padding: 20px 0; /* Adjust padding for smaller screens */
-    }
-}
-
 .contact {
     background-color: #333;
     color: #fff;

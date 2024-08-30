@@ -17,7 +17,7 @@
     flex-direction: column;
     align-items: center;
     /* padding: 4%; */
-    color: rgb(183, 169, 90); /* Set text color */
+    color: white; /* Set text color */
 }
 .bottleservice-box-image {
     background-color: rgba(255, 255, 255, 0.2);
@@ -45,78 +45,49 @@ h1 {
     margin-bottom: 20px;
 }
 
-.form-group {
-    margin-bottom: 1rem;
+.bottleservice-form-group {
+    /* margin-bottom: 0.2rem; */
 }
 
-.form-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    text-align: left;
-    color: rgb(183, 169, 90);
-}
-
-.form-control {
+.bottleservice-form-control {
     background-color: #171616;
-    color: rgb(183, 169, 90);
-    border: 1px solid rgb(183, 169, 90);
+    color: white;
+    border: 0.5px solid white;
+    font-weight: 100;
+    font-size: 13px;
+    padding: 5%;
+}
+
+.bottleservice-form-control::placeholder {
+    color: white;
 }
 
 .form-control::placeholder {
-    color: rgb(183, 169, 90);
+    color: white;
 }
 
-.btn-primary {
+.bottleservice-form-submit {
     background-color: rgb(183, 169, 90);
-    border-color: #333;
-    color: black;
-    font-weight: bold;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.btn-primary:hover {
-    background-color: #555;
-    border-color: #555;
+.bottleservice-form-submit:hover {
+    background-color: rgb(149, 137, 67);
 }
 
-/* Events Page */
-.event-page {
-    padding: 20px;
-}
-
-.event-form {
-    max-width: 600px;
-    margin: auto;
-}
-
-.event-form .form-group {
-    margin-bottom: 15px;
-}
-
-.submit-button {
-    margin-top: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar-logo {
-        width: 80px;
-    }
-
-    .info-boxes {
-        flex-direction: column;
-    }
-
-    .info-box {
-        width: 90%;
-        margin: 10px auto;
-    }
-
-    .contact-box {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .event-form {
-        width: 100%;
-    }
+.bottleservice-form-submit:active {
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.2
+    ); /* Darker background when clicked */
+    transform: scale(
+        0.98
+    ); /* Slightly smaller scale to mimic a pressed effect */
 }

@@ -23,22 +23,28 @@ function GuestlistForm() {
     }
     return (
         <>
-            <Form onSubmit={handleSubmit} className="form-container">
+            <Form onSubmit={handleSubmit} className="guestlist-form-container">
                 <Row>
                     <Col xs={6}>
-                        <Form.Group controlId="formName">
+                        <Form.Group
+                            className="guestlist-form-group"
+                            controlId="formName"
+                        >
                             <Form.Control
                                 type="text"
                                 placeholder="First Name"
                                 name="firstName"
                                 value={formData.firstName}
                                 onChange={handleChange}
-                                className="form-input"
+                                className="guestlist-form-control"
                             />
                         </Form.Group>
                     </Col>
                     <Col xs={6}>
-                        <Form.Group controlId="formPeople">
+                        <Form.Group
+                            className="guestlist-form-group"
+                            controlId="formPeople"
+                        >
                             <Form.Control
                                 style={{
                                     marginBottom: "10%",
@@ -48,14 +54,17 @@ function GuestlistForm() {
                                 name="lastName"
                                 value={formData.lastName}
                                 onChange={handleChange}
-                                className="form-input"
+                                className="guestlist-form-control"
                             />
                         </Form.Group>
                     </Col>
                 </Row>
                 <Row>
                     <Col xs={6}>
-                        <Form.Group controlId="formMaleAttendees">
+                        <Form.Group
+                            className="guestlist-form-group"
+                            controlId="formMaleAttendees"
+                        >
                             <Form.Control
                                 style={{
                                     marginBottom: "10%",
@@ -65,12 +74,15 @@ function GuestlistForm() {
                                 name="maleAttendees"
                                 value={formData.maleAttendees}
                                 onChange={handleChange}
-                                className="form-input"
+                                className="guestlist-form-control"
                             />
                         </Form.Group>
                     </Col>
                     <Col xs={6}>
-                        <Form.Group controlId="formFemaleAttendees">
+                        <Form.Group
+                            className="guestlist-form-group"
+                            controlId="formFemaleAttendees"
+                        >
                             <Form.Control
                                 style={{
                                     marginBottom: "10%",
@@ -80,14 +92,17 @@ function GuestlistForm() {
                                 name="femaleAttendees"
                                 value={formData.femaleAttendees}
                                 onChange={handleChange}
-                                className="form-input"
+                                className="guestlist-form-control"
                             />
                         </Form.Group>
                     </Col>
                 </Row>
                 <Row>
                     <Col xs={6}>
-                        <Form.Group controlId="formDate">
+                        <Form.Group
+                            className="guestlist-form-group"
+                            controlId="formDate"
+                        >
                             <Form.Control
                                 style={{
                                     marginBottom: "10%",
@@ -96,12 +111,15 @@ function GuestlistForm() {
                                 name="date"
                                 value={formData.date}
                                 onChange={handleChange}
-                                className="form-input"
+                                className="guestlist-form-control"
                             />
                         </Form.Group>
                     </Col>
                     <Col xs={6}>
-                        <Form.Group controlId="formContact">
+                        <Form.Group
+                            className="guestlist-form-group"
+                            controlId="formContact"
+                        >
                             <Form.Control
                                 style={{
                                     marginBottom: "10%",
@@ -111,14 +129,17 @@ function GuestlistForm() {
                                 name="contact"
                                 value={formData.contact}
                                 onChange={handleChange}
-                                className="form-input"
+                                className="guestlist-form-control"
                             />
                         </Form.Group>
                     </Col>
                 </Row>
                 <Row>
                     <Col xs={12}>
-                        <Form.Group controlId="formComments">
+                        <Form.Group
+                            className="guestlist-form-group"
+                            controlId="formComments"
+                        >
                             <Form.Control
                                 style={{
                                     marginBottom: "10%",
@@ -129,13 +150,13 @@ function GuestlistForm() {
                                 name="comments"
                                 value={formData.comments}
                                 onChange={handleChange}
-                                className="form-input"
+                                className="guestlist-form-control"
                             />
                         </Form.Group>
                     </Col>
                 </Row>
-                <Button variant="primary" type="submit" className="w-100 mt-3">
-                    Submit
+                <Button className="w-100 mt-3 guestlist-form-submit">
+                    SUBMIT
                 </Button>
             </Form>
         </>
@@ -149,19 +170,36 @@ function Guestlist() {
                 <h1>Join Our Guestlist</h1>
             </Row>
             <Row style={{ padding: "5%" }}>
-                <Col md={4} className="guestlist-box-image">
+                <Col
+                    md={4}
+                    // className="guestlist-box-image"
+                >
                     <Image
                         src={miaAboutImg}
                         alt="Club Mia Image"
                         style={{
                             maxWidth: "300px",
-                            border: "5px solid black",
+                            border: "1px solid white",
                             borderRadius: "15px",
+                            margin: "3%",
+                        }}
+                    />
+                    <Image
+                        src={miaAboutImg}
+                        alt="Club Mia Image"
+                        style={{
+                            maxWidth: "300px",
+                            border: "1px solid white",
+                            borderRadius: "15px",
+                            margin: "3%",
                         }}
                     />
                 </Col>
                 <Col md={1}></Col>
-                <Col md={7} className="guestlist-box">
+                <Col
+                    md={7}
+                    // className="guestlist-box"
+                >
                     <Row className="text-center py-5">
                         <Col>
                             <GuestlistForm />
