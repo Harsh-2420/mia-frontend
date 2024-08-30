@@ -16,32 +16,6 @@ import "../css/Nav.css"
 import "../css/Home.css"
 import logo from "../assets/mia-logo-rec.png"
 
-const events = [
-    {
-        id: 1,
-        image: miaCarousel, // Replace with actual image paths
-        title: "Event 1",
-        description: "This is a brief description of Event 1.",
-        date: "2024-09-01",
-        cost: "$50",
-    },
-    {
-        id: 2,
-        image: miaCarousel3, // Replace with actual image paths
-        title: "Event 2",
-        description: "This is a brief description of Event 2.",
-        date: "2024-10-15",
-        cost: "$75",
-    },
-    {
-        id: 3,
-        image: miaCarousel2, // Replace with actual image paths
-        title: "Event 3",
-        description: "This is a brief description of Event 3.",
-        date: "2024-11-20",
-        cost: "$100",
-    },
-]
 function Home() {
     return (
         <div>
@@ -51,7 +25,41 @@ function Home() {
         </div>
     )
 }
+const BUCKET_URL = "https://mia-website-data.storage.googleapis.com"
+
+async function DownloadEventsManifest() {
+    try {
+        const res = await fetch(`${BUCKET_URL}/events.json`)
+        if (res.status !== 200) {
+            console.log(
+                `Failed to download event manifest - ${String(res.body)}`
+            )
+            return {}
+        }
+
+        const manifest = await res.json()
+        return manifest
+    } catch (err) {
+        console.log(`Error downloading event manifest - ${err}`)
+        return {}
+    }
+}
 function Events() {
+    const [events, setEvents] = React.useState([])
+
+    React.useEffect(() => {
+        async function FetchEvents() {
+            let downloadedEvents = []
+            const manifest = await DownloadEventsManifest()
+            if ("events" in manifest) {
+                downloadedEvents = manifest["events"]
+            }
+
+            setEvents(downloadedEvents)
+        }
+
+        FetchEvents()
+    }, [])
     return (
         <section
             className="banner-card-section"
@@ -74,14 +82,38 @@ function Events() {
                         <Col key={event.id} mb={4}>
                             <Card
                                 className="event-card"
-                                style={{ width: "250px", margin: "15px" }}
+                                style={{ margin: "5%", height: "90%" }}
                             >
-                                <Card.Img variant="top" src={event.image} />
-                                <Card.Body>
-                                    <Card.Title>{event.title}</Card.Title>
-                                    <Card.Text>{event.description}</Card.Text>
-                                    <Card.Text>Date:  {event.date}</Card.Text>
-                                    <Card.Text>Cost: {event.cost}</Card.Text>
+                                <Card.Img
+                                    variant="top"
+                                    src={`${BUCKET_URL}/${event.image}`}
+                                    style={{ height: "40%" }}
+                                />
+                                <Card.Body
+                                    style={{
+                                        backgroundColor: "black",
+                                        color: "white",
+                                    }}
+                                >
+                                    <Card.Title
+                                        className="mia-rock-salt"
+                                        style={{
+                                            margin: "5%",
+                                            color: " rgb(183, 169, 90)",
+                                        }}
+                                    >
+                                        {event.title}
+                                    </Card.Title>
+                                    <Card.Text>{event.desc}</Card.Text>
+                                    <Card.Text>Date: {event.time}</Card.Text>
+                                    <Card.Text>Cost: $50</Card.Text>
+
+                                    <div
+                                        className="event-card-button"
+                                        onClick={console.log("clicked")}
+                                    >
+                                        Learn More
+                                    </div>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -91,7 +123,6 @@ function Events() {
         </section>
     )
 }
-
 function Hero() {
     return (
         <section id="events" className="section events">
@@ -145,46 +176,30 @@ function MiaCarousel() {
                     <div className="row">
                         <div className="col-3">
                             <img
-                                className="d-block w-100 custom-carousel-img"
+                                className="d-block w-100 custom-carousel-item"
                                 src={miaCarousel}
                                 alt="First slide"
-                                style={{
-                                    border: "5px solid black",
-                                    borderRadius: "15px",
-                                }}
                             />
                         </div>
                         <div className="col-3">
                             <img
-                                className="d-block w-100 custom-carousel-img"
+                                className="d-block w-100 custom-carousel-item"
                                 src={miaCarousel2}
                                 alt="Second slide"
-                                style={{
-                                    border: "5px solid black",
-                                    borderRadius: "15px",
-                                }}
                             />
                         </div>
                         <div className="col-3">
                             <img
-                                className="d-block w-100 custom-carousel-img"
+                                className="d-block w-100 custom-carousel-item"
                                 src={miaCarousel3}
                                 alt="Third slide"
-                                style={{
-                                    border: "5px solid black",
-                                    borderRadius: "15px",
-                                }}
                             />
                         </div>
                         <div className="col-3">
                             <img
-                                className="d-block w-100 custom-carousel-img"
+                                className="d-block w-100 custom-carousel-item"
                                 src={miaCarousel4}
                                 alt="Fourth slide"
-                                style={{
-                                    border: "5px solid black",
-                                    borderRadius: "15px",
-                                }}
                             />
                         </div>
                     </div>
@@ -193,46 +208,30 @@ function MiaCarousel() {
                     <div className="row">
                         <div className="col-3">
                             <img
-                                className="d-block w-100 custom-carousel-img"
+                                className="d-block w-100 custom-carousel-item"
                                 src={miaCarousel5}
                                 alt="First slide"
-                                style={{
-                                    border: "5px solid black",
-                                    borderRadius: "15px",
-                                }}
                             />
                         </div>
                         <div className="col-3">
                             <img
-                                className="d-block w-100 custom-carousel-img"
+                                className="d-block w-100 custom-carousel-item"
                                 src={miaCarousel6}
                                 alt="Second slide"
-                                style={{
-                                    border: "5px solid black",
-                                    borderRadius: "15px",
-                                }}
                             />
                         </div>
                         <div className="col-3">
                             <img
-                                className="d-block w-100 custom-carousel-img"
+                                className="d-block w-100 custom-carousel-item"
                                 src={miaCarousel7}
                                 alt="Third slide"
-                                style={{
-                                    border: "5px solid black",
-                                    borderRadius: "15px",
-                                }}
                             />
                         </div>
                         <div className="col-3">
                             <img
-                                className="d-block w-100 custom-carousel-img"
+                                className="d-block w-100 custom-carousel-item"
                                 src={miaCarousel8}
                                 alt="Fourth slide"
-                                style={{
-                                    border: "5px solid black",
-                                    borderRadius: "15px",
-                                }}
                             />
                         </div>
                     </div>
