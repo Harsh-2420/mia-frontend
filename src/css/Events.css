@@ -9,6 +9,11 @@ h1 {
     font-size: 2rem; /* Adjust title size */
 }
 
+.event-card-button {
+    font-weight: bold;
+    margin-top: 10%;
+}
+
 .event-card {
     border: 1px solid #b8a960; /* Darker border color */
     border-radius: 8px;
@@ -25,7 +30,7 @@ h1 {
 
 .event-card img {
     object-fit: cover;
-    height: 200px; /* Adjust height as needed */
+    height: 230px; /* Adjust height as needed */
     border-bottom: 1px solid #b8a960; /* Darker border under image */
 }
 

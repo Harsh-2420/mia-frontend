@@ -39,6 +39,7 @@
 
 .nav-link.active {
     color: gold;
+    font-family: "Rock Salt", cursive;
 }
 
 /* Hover effect */

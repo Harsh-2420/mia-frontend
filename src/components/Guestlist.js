@@ -1,105 +1,174 @@
 import React, { useState } from "react"
-import { Form, Button } from "react-bootstrap"
+import { Form, Button, Row, Col, Image } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../css/Guestlist.css"
-function Guestlist() {
+import miaAboutImg from "../assets/Mia 8.JPG"
+
+function GuestlistForm() {
     const [formData, setFormData] = useState({
-        name: "",
-        people: "",
+        firstName: "",
+        lastName: "",
         date: "",
-        time: "",
         contact: "",
         comments: "",
+        maleAttendees: "",
+        femaleAttendees: "",
     })
-
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
-
     const handleSubmit = (e) => {
         e.preventDefault()
-        // Handle form submission logic here
         console.log("Form submitted:", formData)
     }
-
     return (
-        <div className="events-page">
+        <>
             <Form onSubmit={handleSubmit} className="form-container">
-                <Form.Group controlId="formName">
-                    <Form.Label>Name</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter your name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="form-input"
-                    />
-                </Form.Group>
-
-                <Form.Group controlId="formPeople">
-                    <Form.Label>Number of People</Form.Label>
-                    <Form.Control
-                        type="number"
-                        placeholder="Enter number of people"
-                        name="people"
-                        value={formData.people}
-                        onChange={handleChange}
-                        className="form-input"
-                    />
-                </Form.Group>
-
-                <Form.Group controlId="formDate">
-                    <Form.Label>Event Date</Form.Label>
-                    <Form.Control
-                        type="date"
-                        name="date"
-                        value={formData.date}
-                        onChange={handleChange}
-                        className="form-input"
-                    />
-                </Form.Group>
-
-                <Form.Group controlId="formTime">
-                    <Form.Label>Event Time</Form.Label>
-                    <Form.Control
-                        type="time"
-                        name="time"
-                        value={formData.time}
-                        onChange={handleChange}
-                        className="form-input"
-                    />
-                </Form.Group>
-
-                <Form.Group controlId="formContact">
-                    <Form.Label>Contact Information</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter your contact information"
-                        name="contact"
-                        value={formData.contact}
-                        onChange={handleChange}
-                        className="form-input"
-                    />
-                </Form.Group>
-
-                <Form.Group controlId="formComments">
-                    <Form.Label>Comments</Form.Label>
-                    <Form.Control
-                        as="textarea"
-                        rows={3}
-                        placeholder="Additional comments"
-                        name="comments"
-                        value={formData.comments}
-                        onChange={handleChange}
-                        className="form-input"
-                    />
-                </Form.Group>
-
+                <Row>
+                    <Col xs={6}>
+                        <Form.Group controlId="formName">
+                            <Form.Control
+                                type="text"
+                                placeholder="First Name"
+                                name="firstName"
+                                value={formData.firstName}
+                                onChange={handleChange}
+                                className="form-input"
+                            />
+                        </Form.Group>
+                    </Col>
+                    <Col xs={6}>
+                        <Form.Group controlId="formPeople">
+                            <Form.Control
+                                style={{
+                                    marginBottom: "10%",
+                                }}
+                                type="text"
+                                placeholder="Last Name"
+                                name="lastName"
+                                value={formData.lastName}
+                                onChange={handleChange}
+                                className="form-input"
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={6}>
+                        <Form.Group controlId="formMaleAttendees">
+                            <Form.Control
+                                style={{
+                                    marginBottom: "10%",
+                                }}
+                                type="number"
+                                placeholder="Male Attendees"
+                                name="maleAttendees"
+                                value={formData.maleAttendees}
+                                onChange={handleChange}
+                                className="form-input"
+                            />
+                        </Form.Group>
+                    </Col>
+                    <Col xs={6}>
+                        <Form.Group controlId="formFemaleAttendees">
+                            <Form.Control
+                                style={{
+                                    marginBottom: "10%",
+                                }}
+                                type="number"
+                                placeholder="Female Attendees"
+                                name="femaleAttendees"
+                                value={formData.femaleAttendees}
+                                onChange={handleChange}
+                                className="form-input"
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={6}>
+                        <Form.Group controlId="formDate">
+                            <Form.Control
+                                style={{
+                                    marginBottom: "10%",
+                                }}
+                                type="date"
+                                name="date"
+                                value={formData.date}
+                                onChange={handleChange}
+                                className="form-input"
+                            />
+                        </Form.Group>
+                    </Col>
+                    <Col xs={6}>
+                        <Form.Group controlId="formContact">
+                            <Form.Control
+                                style={{
+                                    marginBottom: "10%",
+                                }}
+                                type="tel" // Use type="tel" for phone number
+                                placeholder="Phone Number"
+                                name="contact"
+                                value={formData.contact}
+                                onChange={handleChange}
+                                className="form-input"
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12}>
+                        <Form.Group controlId="formComments">
+                            <Form.Control
+                                style={{
+                                    marginBottom: "10%",
+                                }}
+                                as="textarea"
+                                rows={3}
+                                placeholder="Additional comments"
+                                name="comments"
+                                value={formData.comments}
+                                onChange={handleChange}
+                                className="form-input"
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
                 <Button variant="primary" type="submit" className="w-100 mt-3">
                     Submit
                 </Button>
             </Form>
+        </>
+    )
+}
+
+function Guestlist() {
+    return (
+        <div class="guestlist-page-container">
+            <Row style={{ marginTop: "3%", paddingTop: "5%" }}>
+                <h1>Join Our Guestlist</h1>
+            </Row>
+            <Row style={{ padding: "5%" }}>
+                <Col md={4} className="guestlist-box-image">
+                    <Image
+                        src={miaAboutImg}
+                        alt="Club Mia Image"
+                        style={{
+                            maxWidth: "300px",
+                            border: "5px solid black",
+                            borderRadius: "15px",
+                        }}
+                    />
+                </Col>
+                <Col md={1}></Col>
+                <Col md={7} className="guestlist-box">
+                    <Row className="text-center py-5">
+                        <Col>
+                            <GuestlistForm />
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
         </div>
     )
 }

@@ -1,60 +1,60 @@
 import React from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 import { FaEnvelope } from "react-icons/fa"
+import FloorPlan from "../assets/floorplan.jpg"
+import MiaMenu from "../assets/mia-menu.pdf"
 import "../css/Packages.css" // Ensure this path is correct
+import { Document, Page } from "react-pdf"
+import { MdFileDownload, MdEmail } from "react-icons/md"
 
 const Packages = () => {
     return (
-        <Container fluid>
-            <Row className="packages_section floorplan">
-                <Col>
-                    <div className="packages_section-content">
-                        <img
-                            src="path-to-your-floorplan-image.jpg"
-                            alt="Floor Plan"
-                            className="img-fluid"
-                        />
-                    </div>
+        <div style={{ backgroundColor: "#1c1c1c" }}>
+            <Row style={{ height: "200px" }}></Row>
+            <Row className="banner">
+                <Col md={6} className="text-center mb-4">
+                    <h2 className="mia-cursive" style={{ color: "white" }}>
+                        check out our
+                    </h2>
+                    <h1 className="mia-rock-salt">Floor Plan</h1>
+                </Col>
+                <Col md={6} className="d-flex align-items-center">
+                    <img
+                        src={FloorPlan}
+                        alt="Floor Plan"
+                        className="img-fluid img-thumbnail floorplan-img"
+                        style={{
+                            transform: "rotate(90deg)",
+                            width: "40%",
+                            height: "auto",
+                        }}
+                    />
                 </Col>
             </Row>
-
-            <Row className="packages_section menu">
-                <Col>
-                    <div className="packages_section-content">
-                        <h2>Menu</h2>
-                        <Row>
-                            <Col sm={4}>
-                                <strong>Item</strong>
-                            </Col>
-                            <Col sm={4}>
-                                <strong>Price</strong>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col sm={4}>Item 1</Col>
-                            <Col sm={4}>$10</Col>
-                        </Row>
-                        <Row>
-                            <Col sm={4}>Item 2</Col>
-                            <Col sm={4}>$15</Col>
-                        </Row>
+            <Row className="banner">
+                <Col xs={6} className="text-center mb-4">
+                    <div className="">
+                        <Document>{/* Insert Mia Menu PDF */}</Document>
                     </div>
                 </Col>
-            </Row>
-
-            <Row className="packages_section email">
-                <Col className="text-center">
-                    <div className="packages_section-content">
-                        <Button
-                            variant="primary"
-                            href="mailto:your-email@example.com"
-                        >
-                            <FaEnvelope /> Email Us
-                        </Button>
-                    </div>
+                <Col md={6} className="text-center mb-4">
+                    <h2 className="mia-cursive" style={{ color: "white" }}>
+                        check out our
+                    </h2>
+                    <h1 className="mia-rock-salt">Menu</h1>
                 </Col>
             </Row>
-        </Container>
+            <Row>
+                <Col xs={12} className="text-center">
+                    <a
+                        href="mailto:your-email@example.com"
+                        className="btn btn-primary"
+                    >
+                        <MdEmail size={24} /> Email Us
+                    </a>
+                </Col>
+            </Row>
+        </div>
     )
 }
 

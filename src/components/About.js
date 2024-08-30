@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Row, Col, Collapse, Button } from "react-bootstrap"
+import { Row, Col, Collapse, Button, Image } from "react-bootstrap"
 import {
     FaInstagram,
     FaEnvelope,
@@ -7,6 +7,8 @@ import {
     FaChevronDown,
     FaChevronUp,
 } from "react-icons/fa"
+import miaAboutImg from "../assets/Mia 8.JPG"
+
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../css/About.css"
 
@@ -15,11 +17,22 @@ function About() {
     const [openContact, setOpenContact] = useState(false)
 
     return (
-        <div className="events-page">
+        <div class="about-page-container">
             <h1 className="page-title">Welcome to Club Mia</h1>
-            <Row>
-                <Col></Col>
-                <Col md={6} className="about-contact-box">
+            <Row style={{ margin: "5%" }}>
+                <Col md={4} className="about-contact-box-image">
+                    <Image
+                        src={miaAboutImg}
+                        alt="Club Mia Image"
+                        style={{
+                            maxWidth: "300px",
+                            border: "5px solid black",
+                            borderRadius: "15px",
+                        }}
+                    />
+                </Col>
+                <Col md={1}></Col>
+                <Col md={7} className="about-contact-box">
                     <Row className="text-center py-5">
                         <Col>
                             <h3 className="mb-4">
@@ -49,7 +62,6 @@ function About() {
                         </Col>
                     </Row>
                 </Col>
-                <Col></Col>
             </Row>
         </div>
     )

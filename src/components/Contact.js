@@ -16,7 +16,7 @@ function Contact() {
     const [openEvent, setOpenEvent] = useState(false)
 
     return (
-        <div className="events-page">
+        <div className="contact-page">
             <h1 className="page-title">Contact Information</h1>
             <Row>
                 <Col></Col>

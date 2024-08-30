@@ -22,7 +22,7 @@ function App() {
         <Router>
             <div className="App">
                 {/* Navbar */}
-                <nav className="navbar">
+                <nav className="navbar ">
                     <div className="navbar-content">
                         <ul className="nav-links" style={{ marginLeft: "5%" }}>
                             <li>
