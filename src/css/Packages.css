@@ -1,0 +1,23 @@
+.packages-button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.packages-button {
+    background-color: transparent;
+    border: 2px solid rgb(183, 169, 90);
+    color: rgb(183, 169, 90);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.packages-button:hover {
+    color: white;
+    border-color: white;
+    font-weight: bold;
+}
