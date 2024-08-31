@@ -9,9 +9,14 @@ import { MdFileDownload, MdEmail } from "react-icons/md"
 
 const Packages = () => {
     return (
-        <div style={{ backgroundColor: "#1c1c1c" }}>
-            <Row style={{ height: "200px" }}></Row>
-            <Row className="banner">
+        <div
+            style={{
+                backgroundColor: "#1c1c1c",
+                paddingTop: "5%",
+                paddingBottom: "5%"
+            }}
+        >
+            <Row className="banner align-items-center" style={{ padding: "2%" }}>
                 <Col md={6} className="text-center mb-4">
                     <h2 className="mia-cursive" style={{ color: "white" }}>
                         check out our
@@ -31,7 +36,7 @@ const Packages = () => {
                     />
                 </Col>
             </Row>
-            <Row className="banner">
+            <Row className="banner align-items-center" style={{ padding: "2%" }}>
                 <Col xs={6} className="text-center mb-4">
                     <div className="">
                         <Document>{/* Insert Mia Menu PDF */}</Document>
@@ -44,7 +49,7 @@ const Packages = () => {
                     <h1 className="mia-rock-salt">Menu</h1>
                 </Col>
             </Row>
-            <Row>
+            <Row style={{ padding: "2%" }}>
                 <Col xs={12} className="text-center">
                     <a
                         href="mailto:your-email@example.com"

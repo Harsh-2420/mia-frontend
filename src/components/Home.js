@@ -1,6 +1,6 @@
 import React from "react"
 import { Carousel } from "react-bootstrap"
-import { Row, Col, Card, Container } from "react-bootstrap"
+import { Row, Col, Card } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import miaVid from "../assets/Mia 2.mp4"
 import miaCarousel from "../assets/Mia 7.JPG"
@@ -15,6 +15,7 @@ import "../css/Carousel.css"
 import "../css/Nav.css"
 import "../css/Home.css"
 import logo from "../assets/mia-logo-rec.png"
+import { DownloadEventsManifest, BUCKET_URL } from "../common/EventUtils"
 
 function Home() {
     return (
@@ -25,25 +26,7 @@ function Home() {
         </div>
     )
 }
-const BUCKET_URL = "https://mia-website-data.storage.googleapis.com"
 
-async function DownloadEventsManifest() {
-    try {
-        const res = await fetch(`${BUCKET_URL}/events.json`)
-        if (res.status !== 200) {
-            console.log(
-                `Failed to download event manifest - ${String(res.body)}`
-            )
-            return {}
-        }
-
-        const manifest = await res.json()
-        return manifest
-    } catch (err) {
-        console.log(`Error downloading event manifest - ${err}`)
-        return {}
-    }
-}
 function Events() {
     const [events, setEvents] = React.useState([])
 
