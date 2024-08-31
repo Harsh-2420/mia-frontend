@@ -166,8 +166,11 @@ function GuestlistForm() {
 function Guestlist() {
     return (
         <div class="guestlist-page-container">
-            <Row style={{ marginTop: "3%", paddingTop: "5%" }}>
-                <h1>Join Our Guestlist</h1>
+            <Row style={{ marginTop: "3%", paddingTop: "10%" }}>
+                <h1>
+                    <span className="mia-cursive">Join Our </span>
+                    <span className="mia-rock-salt">Guestlist</span>
+                </h1>
             </Row>
             <Row style={{ padding: "5%" }}>
                 <Col

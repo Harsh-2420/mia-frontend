@@ -25,6 +25,7 @@
     display: flex;
     margin: 0;
     padding: 0;
+    gap: 20px;
 }
 
 .nav-links li {
@@ -55,22 +56,57 @@
     object-fit: cover;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Hide the hamburger menu by default */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    background-color: #120f0b;
+    width: 25px;
+    height: 3px;
+    margin: 4px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 780px) {
     .navbar {
-        padding: 10px;
+        height: 15%;
     }
-
     .nav-links {
-        flex-direction: column; /* Stack links vertically on small screens */
-        align-items: center; /* Center align links */
+        display: none; /* Hide nav links */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust to place below navbar */
+        right: 0;
+        background-color: #000;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        transition: 0.5s ease;
     }
 
-    .nav-links li {
-        margin: 10px 0; /* Adjust margin for vertical layout */
+    /* Show nav links when menu is active */
+    .nav-links.active {
+        display: flex;
     }
 
-    .navbar-logo {
-        max-height: 50px; /* Adjust logo size */
+    /* Show the hamburger menu */
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
