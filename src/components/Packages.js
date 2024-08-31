@@ -11,10 +11,13 @@ const Packages = () => {
             style={{
                 backgroundColor: "#1c1c1c",
                 paddingTop: "5%",
-                paddingBottom: "5%"
+                paddingBottom: "5%",
             }}
         >
-            <Row className="banner align-items-center" style={{ padding: "2%" }}>
+            <Row
+                className="banner align-items-center"
+                style={{ padding: "2%" }}
+            >
                 <Col md={6} className="text-center mb-4">
                     <h2 className="mia-cursive" style={{ color: "white" }}>
                         check out our
@@ -34,7 +37,10 @@ const Packages = () => {
                     />
                 </Col>
             </Row>
-            <Row className="banner align-items-center" style={{ padding: "2%" }}>
+            <Row
+                className="banner align-items-center"
+                style={{ padding: "2%" }}
+            >
                 <Col xs={6} className="text-center mb-4">
                     <img
                         src={MiaMenu}
@@ -55,12 +61,9 @@ const Packages = () => {
             </Row>
             <Row style={{ padding: "2%" }}>
                 <Col xs={12} className="text-center">
-                    <a
-                        href="mailto:your-email@example.com"
-                        className="btn btn-primary"
-                    >
-                        <MdEmail size={24} /> Email Us
-                    </a>
+                    <div className="packages-button-container">
+                        <button className="packages-button">Email Us</button>
+                    </div>
                 </Col>
             </Row>
         </div>

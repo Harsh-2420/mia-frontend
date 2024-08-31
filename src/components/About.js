@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Row, Col, Collapse, Button, Image } from "react-bootstrap"
+import { Row, Col, Collapse, Button, Image, Carousel } from "react-bootstrap"
 import {
     FaInstagram,
     FaEnvelope,
@@ -8,7 +8,14 @@ import {
     FaChevronUp,
 } from "react-icons/fa"
 import miaAboutImg from "../assets/Mia 8.JPG"
-
+import miaCarousel from "../assets/Mia 7.JPG"
+import miaCarousel2 from "../assets/Mia 8.JPG"
+import miaCarousel3 from "../assets/Mia 9.JPG"
+import miaCarousel4 from "../assets/Mia 10.JPG"
+import miaCarousel5 from "../assets/Mia 11.JPG"
+import miaCarousel6 from "../assets/Mia 12.JPG"
+import miaCarousel7 from "../assets/Mia 13.JPG"
+import miaCarousel8 from "../assets/Mia 14.JPG"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../css/About.css"
 
@@ -20,19 +27,7 @@ function About() {
         <div class="about-page-container">
             <h1 className="page-title">Welcome to Club Mia</h1>
             <Row style={{ margin: "5%" }}>
-                <Col md={4} className="about-contact-box-image">
-                    <Image
-                        src={miaAboutImg}
-                        alt="Club Mia Image"
-                        style={{
-                            maxWidth: "300px",
-                            border: "5px solid black",
-                            borderRadius: "15px",
-                        }}
-                    />
-                </Col>
-                <Col md={1}></Col>
-                <Col md={7} className="about-contact-box">
+                <Col className="about-contact-box">
                     <Row className="text-center py-5">
                         <Col>
                             <h3 className="mb-4">
@@ -56,14 +51,101 @@ function About() {
                             <span className="d-block mb-4">
                                 Come be a part of Club Mia
                             </span>
-                            <Button variant="primary" href="/contact">
-                                Connect with Us
-                            </Button>
+
+                            <div className="packages-button-container">
+                                <button className="packages-button">
+                                    Connect with Us
+                                </button>
+                            </div>
                         </Col>
+                    </Row>
+                    <Row>
+                        <MiaCarousel />
                     </Row>
                 </Col>
             </Row>
         </div>
+    )
+}
+
+function MiaCarousel() {
+    return (
+        // <section className="carousel-section">
+        //     <div className="carousel-overlay"></div>
+        <Carousel
+            indicators={false}
+            controls={true}
+            interval={null} // Disable automatic scrolling
+            slide={true}
+            items={8} // Set the total number of items (images)
+            slidesPerView={1} // Display 1 image at a time
+        >
+            <Carousel.Item>
+                <div className="row">
+                    <div className="col-3">
+                        <img
+                            className="d-block w-100 custom-carousel-item"
+                            src={miaCarousel}
+                            alt="First slide"
+                        />
+                    </div>
+                    <div className="col-3">
+                        <img
+                            className="d-block w-100 custom-carousel-item"
+                            src={miaCarousel2}
+                            alt="Second slide"
+                        />
+                    </div>
+                    <div className="col-3">
+                        <img
+                            className="d-block w-100 custom-carousel-item"
+                            src={miaCarousel3}
+                            alt="Third slide"
+                        />
+                    </div>
+                    <div className="col-3">
+                        <img
+                            className="d-block w-100 custom-carousel-item"
+                            src={miaCarousel4}
+                            alt="Fourth slide"
+                        />
+                    </div>
+                </div>
+            </Carousel.Item>
+            <Carousel.Item>
+                <div className="row">
+                    <div className="col-3">
+                        <img
+                            className="d-block w-100 custom-carousel-item"
+                            src={miaCarousel5}
+                            alt="First slide"
+                        />
+                    </div>
+                    <div className="col-3">
+                        <img
+                            className="d-block w-100 custom-carousel-item"
+                            src={miaCarousel6}
+                            alt="Second slide"
+                        />
+                    </div>
+                    <div className="col-3">
+                        <img
+                            className="d-block w-100 custom-carousel-item"
+                            src={miaCarousel7}
+                            alt="Third slide"
+                        />
+                    </div>
+                    <div className="col-3">
+                        <img
+                            className="d-block w-100 custom-carousel-item"
+                            src={miaCarousel8}
+                            alt="Fourth slide"
+                        />
+                    </div>
+                </div>
+            </Carousel.Item>
+        </Carousel>
+        // </section>
     )
 }
 

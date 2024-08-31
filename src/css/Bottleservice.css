@@ -91,3 +91,9 @@ h1 {
         0.98
     ); /* Slightly smaller scale to mimic a pressed effect */
 }
+
+@media screen and (max-width: 780px) {
+    .bottleservice-page-container {
+        padding-top: 15%;
+    }
+}

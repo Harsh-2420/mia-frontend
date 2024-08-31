@@ -1,6 +1,6 @@
 import React from "react"
-import { Carousel } from "react-bootstrap"
-import { Row, Col, Card } from "react-bootstrap"
+
+import { Row, Col, Card, Carousel } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import miaVid from "../assets/Mia 2.mp4"
 import miaCarousel from "../assets/Mia 7.JPG"
@@ -53,56 +53,64 @@ function Events() {
                 paddingBottom: "3%",
             }}
         >
-            <Col md={3} className="text-center mb-4">
-                <h2 className="mia-cursive" style={{ color: "white" }}>
-                    check out our
-                </h2>
-                <h1 className="mia-rock-salt">EVENTS</h1>
-            </Col>
-            <Col md={9} className="mt-4">
-                <Row xs={1} md={3}>
-                    {events.map((event) => (
-                        <Col key={event.id} mb={4}>
-                            <Card
-                                className="event-card"
-                                style={{ margin: "5%", height: "90%" }}
-                            >
-                                <Card.Img
-                                    variant="top"
-                                    src={`${BUCKET_URL}/${event.image}`}
-                                    style={{ height: "40%" }}
-                                />
-                                <Card.Body
-                                    style={{
-                                        backgroundColor: "black",
-                                        color: "white",
-                                    }}
+            <Row>
+                <Col md={3} xs={12} className="text-center mb-4">
+                    <h2 className="mia-cursive" style={{ color: "white" }}>
+                        check out our
+                    </h2>
+                    <h1 className="mia-rock-salt">EVENTS</h1>
+                </Col>
+                <Col md={9} xs={12} className="mt-4">
+                    <Row xs={1} md={3}>
+                        {events.map((event) => (
+                            <Col key={event.id} mb={4}>
+                                <Card
+                                    className="event-card"
+                                    style={{ margin: "5%", height: "90%" }}
                                 >
-                                    <Card.Title
-                                        className="mia-rock-salt"
+                                    <Card.Img
+                                        variant="top"
+                                        src={`${BUCKET_URL}/${event.image}`}
+                                        style={{ height: "40%" }}
+                                    />
+                                    <Card.Body
                                         style={{
-                                            margin: "5%",
-                                            color: " rgb(183, 169, 90)",
+                                            backgroundColor: "black",
+                                            color: "white",
                                         }}
                                     >
-                                        {event.title}
-                                    </Card.Title>
-                                    <Card.Text>{event.desc}</Card.Text>
-                                    <Card.Text>Date: {event.time}</Card.Text>
-                                    <Card.Text>Cost: $50</Card.Text>
-
-                                    <div
-                                        className="event-card-button"
-                                        onClick={console.log("clicked")}
-                                    >
-                                        Learn More
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    ))}
-                </Row>
-            </Col>
+                                        <Card.Title
+                                            className="mia-rock-salt"
+                                            style={{
+                                                margin: "5%",
+                                                color: " rgb(183, 169, 90)",
+                                            }}
+                                        >
+                                            {event.title}
+                                        </Card.Title>
+                                        <Card.Text>{event.desc}</Card.Text>
+                                        <Card.Text>
+                                            Date: {event.time}
+                                        </Card.Text>
+                                        <Card.Text>Cost: $50</Card.Text>
+                                        <div
+                                            className="hero-page-button-container"
+                                            style={{ marginLeft: "15px" }}
+                                        >
+                                            <button
+                                                className="hero-page-button"
+                                                style={{ fontSize: "14px" }}
+                                            >
+                                                Buy Tickets
+                                            </button>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        ))}
+                    </Row>
+                </Col>
+            </Row>
         </section>
     )
 }
@@ -112,7 +120,7 @@ function Hero() {
             <div className="mia-logo-overlay"></div>{" "}
             <div className="welcome">
                 <div className="page-title mia-cursive">
-                    Welcome To
+                    welcome to
                     <img
                         src={logo}
                         alt="Club Logo"
