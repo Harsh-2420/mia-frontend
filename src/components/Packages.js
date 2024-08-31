@@ -1,11 +1,9 @@
 import React from "react"
-import { Container, Row, Col, Button } from "react-bootstrap"
-import { FaEnvelope } from "react-icons/fa"
+import { Row, Col } from "react-bootstrap"
 import FloorPlan from "../assets/floorplan.jpg"
-import MiaMenu from "../assets/mia-menu.pdf"
+import MiaMenu from "../assets/bottle_service.png"
 import "../css/Packages.css" // Ensure this path is correct
-import { Document, Page } from "react-pdf"
-import { MdFileDownload, MdEmail } from "react-icons/md"
+import { MdEmail } from "react-icons/md"
 
 const Packages = () => {
     return (
@@ -38,9 +36,15 @@ const Packages = () => {
             </Row>
             <Row className="banner align-items-center" style={{ padding: "2%" }}>
                 <Col xs={6} className="text-center mb-4">
-                    <div className="">
-                        <Document>{/* Insert Mia Menu PDF */}</Document>
-                    </div>
+                    <img
+                        src={MiaMenu}
+                        alt="Menu"
+                        className="img-fluid img-thumbnail floorplan-img"
+                        style={{
+                            width: "60%",
+                            height: "auto",
+                        }}
+                    />
                 </Col>
                 <Col md={6} className="text-center mb-4">
                     <h2 className="mia-cursive" style={{ color: "white" }}>
