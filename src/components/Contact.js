@@ -48,77 +48,51 @@ function Contact() {
                 <Col md={6} className="contact-box">
                     <Row>
                         <Col>
-                            <div
-                                className="collapsible-section"
-                                onClick={() => setOpenContact(!openContact)}
-                            >
-                                <span>Contact Number</span>
-                                {openContact ? (
-                                    <FaChevronUp />
-                                ) : (
-                                    <FaChevronDown />
-                                )}
+                            <div className="contact-section">
+                                <span className="contact-info-header">
+                                    Contact Number
+                                </span>
+                                <p className="contact-info-desc">
+                                    +123 456 7890
+                                </p>
                             </div>
-                            <Collapse in={openContact}>
-                                <div id="contact-collapse">
-                                    <p>+123 456 7890</p>
-                                </div>
-                            </Collapse>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-                            <div
-                                className="collapsible-section"
-                                onClick={() => setOpenLocation(!openLocation)}
-                            >
-                                <span>Location</span>
-                                {openLocation ? (
-                                    <FaChevronUp />
-                                ) : (
-                                    <FaChevronDown />
-                                )}
+                            <div className="contact-section">
+                                <span className="contact-info-header">
+                                    Location
+                                </span>
+                                <p className="contact-info-desc">
+                                    123 Nightclub Avenue, Party City
+                                </p>
                             </div>
-                            <Collapse in={openLocation}>
-                                <div id="location-collapse">
-                                    <p>123 Nightclub Avenue, Party City</p>
-                                </div>
-                            </Collapse>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-                            <div
-                                className="collapsible-section"
-                                onClick={() => setOpenEvent(!openEvent)}
-                            >
-                                <span>Book a Private Event with Us</span>
-                                {openEvent ? (
-                                    <FaChevronUp />
-                                ) : (
-                                    <FaChevronDown />
-                                )}
+                            <div className="contact-section">
+                                <span className="contact-info-header">
+                                    Book a Private Event with Us
+                                </span>
+                                <p className="contact-info-desc">
+                                    Looking for the perfect venue to host an
+                                    unforgettable private event? Club Mia,
+                                    Toronto’s premier nightlife destination!
+                                    Whether you’re planning a birthday
+                                    celebration, corporate event, bachelor or
+                                    bachelorette party, or any special occasion,
+                                    Club Mia offers an unparalleled setting that
+                                    will make your event truly memorable.
+                                </p>
                             </div>
-                            <Collapse in={openEvent}>
-                                <div id="event-collapse">
-                                    <p>
-                                        Looking for the perfect venue to host an
-                                        unforgettable private event? Club Mia,
-                                        Toronto’s premier nightlife destination!
-                                        Whether you’re planning a birthday
-                                        celebration, corporate event, bachelor
-                                        or bachelorette party, or any special
-                                        occasion, Club Mia offers an
-                                        unparalleled setting that will make your
-                                        event truly memorable.
-                                    </p>
-                                </div>
-                            </Collapse>
                         </Col>
                     </Row>
                 </Col>
                 <Col></Col>
             </Row>
+
             <Row className="mt-4">
                 <Col></Col>
                 <Col md={8}>

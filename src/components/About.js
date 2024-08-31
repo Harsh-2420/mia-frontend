@@ -51,9 +51,12 @@ function About() {
                             <span className="d-block mb-4">
                                 Come be a part of Club Mia
                             </span>
-                            <Button variant="primary" href="/contact">
-                                Connect with Us
-                            </Button>
+
+                            <div className="packages-button-container">
+                                <button className="packages-button">
+                                    Connect with Us
+                                </button>
+                            </div>
                         </Col>
                     </Row>
                     <Row>

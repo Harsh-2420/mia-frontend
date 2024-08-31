@@ -1,26 +1,25 @@
-import React from "react";
-import { Row, Col, Card } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/Events.css"; // Ensure you have this CSS file
-import { DownloadEventsManifest, BUCKET_URL } from "../common/EventUtils";
+import React from "react"
+import { Row, Col, Card } from "react-bootstrap"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "../css/Events.css" // Ensure you have this CSS file
+import { DownloadEventsManifest, BUCKET_URL } from "../common/EventUtils"
 
 function Events() {
-	const [events, setEvents] = React.useState([]);
+    const [events, setEvents] = React.useState([])
 
-	React.useEffect(() => {
-		async function FetchEvents() {
-            let downloadedEvents = [];
-			const manifest = await DownloadEventsManifest();
-            if ("events" in manifest)
-            {
-                downloadedEvents = manifest["events"];
+    React.useEffect(() => {
+        async function FetchEvents() {
+            let downloadedEvents = []
+            const manifest = await DownloadEventsManifest()
+            if ("events" in manifest) {
+                downloadedEvents = manifest["events"]
             }
 
-			setEvents(downloadedEvents);
-		}
+            setEvents(downloadedEvents)
+        }
 
-		FetchEvents();
-	}, []);
+        FetchEvents()
+    }, [])
 
     return (
         <div className="events-page">
@@ -60,10 +59,17 @@ function Events() {
                                 </Card.Title>
                                 <Card.Text>{event.desc}</Card.Text>
                                 <Card.Text>Date: {event.time}</Card.Text>
-                                <Card.Text>Cost: $50</Card.Text>
 
-                                <div className="event-card-button">
-                                    Learn More
+                                <div className="hero-page-button-container">
+                                    <button
+                                        className="hero-page-button"
+                                        style={{
+                                            fontSize: "14px",
+                                            marginLeft: "15px",
+                                        }}
+                                    >
+                                        Buy Tickets
+                                    </button>
                                 </div>
                             </Card.Body>
                         </Card>
