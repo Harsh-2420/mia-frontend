@@ -5,6 +5,10 @@
   font-family: "Rock Salt", cursive;
 }
 
+.mia-accent {
+  color: rgb(183, 169, 90);
+}
+
 .App {
   text-align: center;
 }

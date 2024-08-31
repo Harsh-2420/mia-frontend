@@ -1,73 +1,121 @@
-import React from "react"
-import { Row, Col } from "react-bootstrap"
-import FloorPlan from "../assets/floorplan.jpg"
-import MiaMenu from "../assets/bottle_service.png"
-import "../css/Packages.css" // Ensure this path is correct
-import { MdEmail } from "react-icons/md"
+import React from "react";
+import { Row, Col } from "react-bootstrap";
+import FloorPlan from "../assets/floorplan.jpg";
+import MiaMenu from "../assets/bottle_service.png";
+import "../css/Packages.css"; // Ensure this path is correct
+import { MdEmail } from "react-icons/md";
 
 const Packages = () => {
-    return (
+  return (
+    <div
+      style={{
+        backgroundColor: "#1c1c1c",
+        padding: "5% 2%",
+        paddingTop: "10%", // Extra padding at the top
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        minHeight: "100vh",
+        color: "white",
+      }}
+    >
+      {/* Floor Plan Section */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column", // Stack items vertically
+          alignItems: "center",
+          width: "100%",
+          maxWidth: "1200px",
+          marginBottom: "2rem",
+          padding: "1rem",
+        }}
+      >
         <div
-            style={{
-                backgroundColor: "#1c1c1c",
-                paddingTop: "5%",
-                paddingBottom: "5%",
-            }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+          className="packages-page"
         >
-            <Row
-                className="banner align-items-center"
-                style={{ padding: "2%" }}
-            >
-                <Col md={6} className="text-center mb-4">
-                    <h2 className="mia-cursive" style={{ color: "white" }}>
-                        check out our
-                    </h2>
-                    <h1 className="mia-rock-salt">Floor Plan</h1>
-                </Col>
-                <Col md={6} className="d-flex align-items-center">
-                    <img
-                        src={FloorPlan}
-                        alt="Floor Plan"
-                        className="img-fluid img-thumbnail floorplan-img"
-                        style={{
-                            transform: "rotate(90deg)",
-                            width: "40%",
-                            height: "auto",
-                        }}
-                    />
-                </Col>
-            </Row>
-            <Row
-                className="banner align-items-center"
-                style={{ padding: "2%" }}
-            >
-                <Col xs={6} className="text-center mb-4">
-                    <img
-                        src={MiaMenu}
-                        alt="Menu"
-                        className="img-fluid img-thumbnail floorplan-img"
-                        style={{
-                            width: "60%",
-                            height: "auto",
-                        }}
-                    />
-                </Col>
-                <Col md={6} className="text-center mb-4">
-                    <h2 className="mia-cursive" style={{ color: "white" }}>
-                        check out our
-                    </h2>
-                    <h1 className="mia-rock-salt">Menu</h1>
-                </Col>
-            </Row>
-            <Row style={{ padding: "2%" }}>
-                <Col xs={12} className="text-center">
-                    <div className="packages-button-container">
-                        <button className="packages-button">Email Us</button>
-                    </div>
-                </Col>
-            </Row>
+          <h2 className="mia-cursive">Check out our</h2>
+          <h1 className="mia-rock-salt">Floor Plan</h1>
         </div>
-    )
-}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "1rem",
+          }}
+        >
+          <img
+            src={FloorPlan}
+            alt="Floor Plan"
+            className="floor-plan-img" // Add class here
+          />
+        </div>
+      </div>
 
-export default Packages
+      {/* Menu Section */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column", // Stack items vertically
+          alignItems: "center",
+          width: "100%",
+          maxWidth: "1200px",
+          marginBottom: "2rem",
+          padding: "1rem",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+            padding: "1rem",
+          }}
+        >
+          <h2 className="mia-cursive">Check out our</h2>
+          <h1 className="mia-rock-salt">Menu</h1>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "1rem",
+          }}
+        >
+          <img
+            src={MiaMenu}
+            alt="Menu"
+            style={{
+              width: "100%",
+              maxWidth: "300px",
+              height: "auto",
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Email Button Section */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
+          padding: "1rem",
+        }}
+      >
+        <button className="packages-button">Email Us</button>
+      </div>
+    </div>
+  );
+};
+
+export default Packages;

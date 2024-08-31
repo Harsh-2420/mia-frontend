@@ -1,23 +1,42 @@
 .packages-button-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .packages-button {
-    background-color: transparent;
-    border: 2px solid rgb(183, 169, 90);
-    color: rgb(183, 169, 90);
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-size: 18px;
-    cursor: pointer;
-    margin-right: 20px;
-    transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  border: 2px solid rgb(183, 169, 90);
+  color: rgb(183, 169, 90);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 20px;
+  transition: all 0.3s ease-in-out;
 }
 
 .packages-button:hover {
-    color: white;
-    border-color: white;
-    font-weight: bold;
+  color: white;
+  border-color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .floor-plan-img {
+    max-width: 300px; /* Reduce max-width for tablets */
+  }
+  .packages-page {
+    padding-top: 15%;
+  }
+}
+
+/* Adjust the image size for mobile devices (min-width: 576px) */
+@media (max-width: 576px) {
+  .floor-plan-img {
+    max-width: 200px; /* Reduce max-width for mobile devices */
+  }
+  .packages-page {
+    padding-top: 30%;
+  }
 }
