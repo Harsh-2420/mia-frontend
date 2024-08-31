@@ -22,7 +22,7 @@ function Home() {
     <div>
       <Hero />
       <Events />
-      <MiaCarousel />
+      <MiaCarouselPhone />
     </div>
   );
 }
@@ -223,6 +223,44 @@ function MiaCarousel() {
                 className="d-block w-100 custom-carousel-item"
                 src={miaCarousel8}
                 alt="Fourth slide"
+              />
+            </div>
+          </div>
+        </Carousel.Item>
+      </Carousel>
+    </section>
+  );
+}
+function MiaCarouselPhone() {
+  return (
+    <section className="carousel-phone-section">
+      <div className="carousel-phone-overlay"></div>
+      <Carousel
+        indicators={false}
+        controls={true}
+        interval={null} // Disable automatic scrolling
+        slide={true}
+        items={8} // Set the total number of items (images)
+        slidesPerView={1} // Display 1 image at a time
+      >
+        <Carousel.Item>
+          <div className="row">
+            <div className="col-3">
+              <img
+                className="d-block w-100 custom-carousel-phone-item"
+                src={miaCarousel}
+                alt="First slide"
+              />
+            </div>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div className="row">
+            <div className="col-3">
+              <img
+                className="d-block w-100 custom-carousel-phone-item"
+                src={miaCarousel5}
+                alt="First slide"
               />
             </div>
           </div>

@@ -1,29 +1,63 @@
 .custom-carousel-item {
-    border: 3px solid rgba(78, 77, 77, 0.576);
-    /* border: 5px solid black; */
-    border-radius: 15px;
-    height: 100%;
+  border: 3px solid rgba(78, 77, 77, 0.576);
+  /* border: 5px solid black; */
+  border-radius: 15px;
+  height: 100%;
 }
 .carousel-section {
-    background-color: black;
-    position: relative;
-    padding: 8% 5%;
-    overflow: hidden;
+  background-color: black;
+  position: relative;
+  padding: 8% 5%;
+  overflow: hidden;
 }
 
 .carousel-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url("../assets/Mia 9.JPG");
-    filter: blur(8px);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../assets/Mia 9.JPG");
+  filter: blur(8px);
 }
 
 @media (max-width: 576px) {
-    .carousel-section {
-        padding: 20px 0;
-    }
+  .carousel-section {
+    padding: 20px 0;
+  }
+}
+.custom-carousel-phone-item img {
+  width: 100%; /* Maintain aspect ratio */
+  height: auto;
+  transform: scale(1.5); /* Adjust the scale factor as needed */
+}
+.custom-carousel-phone-item {
+  border: 3px solid rgba(78, 77, 77, 0.576);
+  /* border: 5px solid black; */
+  border-radius: 15px;
+  height: 100%;
+}
+.carousel-phone-section {
+  background-color: black;
+  position: relative;
+  padding: 8% 5%;
+  overflow: hidden;
+}
+
+.carousel-phone-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../assets/Mia 9.JPG");
+  filter: blur(8px);
+}
+
+@media (max-width: 576px) {
+  .carousel-phone-section {
+    padding: 20px 0;
+  }
 }
