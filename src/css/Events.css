@@ -1,65 +1,65 @@
 .events-page {
-  padding: 20px;
-  background-color: #1c1c1c; /* Darker background */
-  color: #b8a960; /* Darker accent color for text */
+    padding: 20px;
+    background-color: #1c1c1c; /* Darker background */
+    color: #b8a960; /* Darker accent color for text */
 }
 
 h1 {
-  color: #b8a960; /* Darker accent color for the title */
-  font-size: 2rem; /* Adjust title size */
+    color: #b8a960; /* Darker accent color for the title */
+    font-size: 2rem; /* Adjust title size */
 }
 
 .event-card-button {
-  font-weight: bold;
-  margin-top: 10%;
+    font-weight: bold;
+    :10% ;
 }
 
 .event-card {
-  border: 1px solid #b8a960; /* Darker border color */
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add transition for shadow */
-  background-color: #1c1c1c; /* Card background matching page background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Subtle shadow */
+    border: 1px solid #b8a960; /* Darker border color */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add transition for shadow */
+    background-color: #1c1c1c; /* Card background matching page background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Subtle shadow */
 }
 
 .event-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8); /* More pronounced shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8); /* More pronounced shadow on hover */
 }
 
 .event-card img {
-  object-fit: cover;
-  height: 230px; /* Adjust height as needed */
-  border-bottom: 1px solid #b8a960; /* Darker border under image */
+    object-fit: cover;
+    height: 230px; /* Adjust height as needed */
+    border-bottom: 1px solid #b8a960; /* Darker border under image */
 }
 
 .event-card .card-body {
-  text-align: center;
-  color: #b8a960; /* Darker accent color for text */
+    text-align: center;
+    color: #b8a960; /* Darker accent color for text */
 }
 
 .card-title {
-  font-size: 1rem; /* Smaller title size */
-  font-weight: bold;
+    font-size: 1rem; /* Smaller title size */
+    font-weight: bold;
 }
 
 .card-text {
-  font-size: 0.9rem; /* Smaller text size */
-  margin-bottom: 0.5rem;
+    font-size: 0.9rem; /* Smaller text size */
+    margin-bottom: 0.5rem;
 }
 
 @media (max-width: 576px) {
-  .event-card img {
-    height: 150px; /* Adjust height for smaller screens */
-  }
-  .card-title {
-    font-size: 1rem; /* Smaller title size on small screens */
-  }
-  .card-text {
-    font-size: 0.8rem; /* Smaller text size on small screens */
-  }
-  .events-page {
-    padding-top: 20%;
-  }
+    .event-card img {
+        height: 150px; /* Adjust height for smaller screens */
+    }
+    .card-title {
+        font-size: 1rem; /* Smaller title size on small screens */
+    }
+    .card-text {
+        font-size: 0.8rem; /* Smaller text size on small screens */
+    }
+    .events-page {
+        padding-top: 20%;
+    }
 }

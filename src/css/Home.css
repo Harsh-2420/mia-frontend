@@ -1,132 +1,132 @@
 /* Base CSS for section */
 .section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden; /* Ensure no scrollbars if video is larger */
-  position: relative; /* Required for absolute positioning of overlay */
-  background-image: url("../assets/Mia 9.JPG"); /* Add your background image */
-  background-size: cover; /* Cover the entire section */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Prevent image from repeating */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Ensure no scrollbars if video is larger */
+    position: relative; /* Required for absolute positioning of overlay */
+    background-image: url("../assets/Mia 9.JPG"); /* Add your background image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
 }
 
 .events {
-  /* margin-top: 60px; */
+    /*  : 60px; */
 }
 /* Overlay with blur and darken effect */
 .mia-logo-overlay {
-  position: absolute; /* Overlay needs to cover the section */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Darken overlay with slightly stronger effect */
-  backdrop-filter: blur(8px); /* Apply blur effect */
-  z-index: 1; /* Ensure the blur overlay sits above the background image */
+    position: absolute; /* Overlay needs to cover the section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(
+        0,
+        0,
+        0,
+        0.5
+    ); /* Darken overlay with slightly stronger effect */
+    backdrop-filter: blur(8px); /* Apply blur effect */
+    z-index: 1; /* Ensure the blur overlay sits above the background image */
 }
 /* Overlay with blur and darken effect */
 .video-overlay {
-  position: absolute; /* Overlay needs to cover the section */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(
-    0,
-    0,
-    0,
-    0.3
-  ); /* Darken overlay with slightly stronger effect */
-  backdrop-filter: blur(6px); /* Apply blur effect */
-  z-index: 1; /* Ensure the blur overlay sits above the background image */
+    position: absolute; /* Overlay needs to cover the section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(
+        0,
+        0,
+        0,
+        0.3
+    ); /* Darken overlay with slightly stronger effect */
+    backdrop-filter: blur(6px); /* Apply blur effect */
+    z-index: 1; /* Ensure the blur overlay sits above the background image */
 }
 
 /* Container for the video itself */
 .video-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative; /* Ensure the video is above the overlay */
-  z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Ensure the video is above the overlay */
+    z-index: 2;
 }
 
 .welcome {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
 }
 
 .page-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  text-align: center;
-  font-size: 4rem; /* Title size remains the same */
-  color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    font-size: 4rem; /* Title size remains the same */
+    color: #fff;
 }
 
 .responsive-video {
-  width: 80%;
-  height: auto;
-  max-width: 975px;
-  object-fit: cover; /* Maintain aspect ratio and cover the container */
+    width: 80%;
+    height: auto;
+    max-width: 975px;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
 }
 
 /* Media queries for responsive design */
 @media (max-width: 768px) {
-  .section {
-    margin-top: 80px; /* Adjust for smaller screens if the navbar height changes */
-  }
+    .section {
+        :80px ; /* Adjust for smaller screens if the navbar height changes */
+    }
 }
 
 @media (max-width: 480px) {
-  .section {
-    margin-top: 100px; /* Adjust further for very small screens if needed */
-  }
+    .section {
+        :100px ; /* Adjust further for very small screens if needed */
+    }
 }
 
 .banner-card-section {
-  /* background-color: #504848; */
-  /* padding: 20px; */
-  background-color: #1c1c1c; /* Darker background */
-  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.2));
-  /* Adjust the shadow parameters as needed */
-  display: flex;
-  align-items: center;
+    /* background-color: #504848; */
+    /* padding: 20px; */
+    background-color: #1c1c1c; /* Darker background */
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.2));
+    /* Adjust the shadow parameters as needed */
+    display: flex;
+    align-items: center;
 }
 
 .hero-page-button-container {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
+    :20px ;
+    display: flex;
+    justify-content: center;
 }
 
 .hero-page-button {
-  background-color: transparent;
-  border: 2px solid rgb(183, 169, 90);
-  color: rgb(183, 169, 90);
-  padding: 10px 20px;
-  border-radius: 12px;
-  font-size: 18px;
-  cursor: pointer;
-  margin-right: 20px;
-  transition: all 0.3s ease-in-out;
+    background-color: transparent;
+    border: 2px solid rgb(183, 169, 90);
+    color: rgb(183, 169, 90);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
 }
 
 .hero-page-button:hover {
-  color: white;
-  border-color: white;
-  font-weight: bold;
+    color: white;
+    border-color: white;
+    font-weight: bold;
 }

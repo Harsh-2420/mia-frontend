@@ -1,97 +1,99 @@
 .bottleservice-page-container {
-  background-color: black; /* Set background color for the entire page */
+    background-color: black; /* Set background color for the entire page */
 }
 .bottleservice-box {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.2
-  ); /* Set background color to white with 20% opacity */
-  /* padding: 20px; */
-  border-radius: 8px;
-  margin-bottom: 20px;
-  /* margin-top: 20px; */
-  font-size: 1.1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* padding: 4%; */
-  color: white; /* Set text color */
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.2
+    ); /* Set background color to white with 20% opacity */
+    /* padding: 20px; */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    /*  : 20px; */
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 4%; */
+    color: white; /* Set text color */
 }
 .bottleservice-box-image {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  margin-bottom: 20px;
-  /* margin-top: 20px; */
-  font-size: 1.1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2%; /* Reduced padding */
-  padding-right: 4%; /* Reduced padding */
-  padding-left: 4%; /* Reduced padding */
-  height: 100%; /* Adjusted height */
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    /*  : 20px; */
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%; /* Reduced padding */
+    padding-right: 4%; /* Reduced padding */
+    padding-left: 4%; /* Reduced padding */
+    height: 100%; /* Adjusted height */
 }
 
 .bottleservice-box img {
-  max-width: 100%; /* Ensure the image doesn't exceed the box width */
-  height: auto;
-  margin-bottom: 20px; /* Added margin for spacing */
+    max-width: 100%; /* Ensure the image doesn't exceed the box width */
+    height: auto;
+    margin-bottom: 20px; /* Added margin for spacing */
 }
 
 /* General Styling */
 h1 {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .bottleservice-form-group {
-  /* margin-bottom: 0.2rem; */
+    /* margin-bottom: 0.2rem; */
 }
 
 .bottleservice-form-control {
-  background-color: #171616;
-  color: white;
-  border: 0.5px solid white;
-  font-weight: 100;
-  font-size: 13px;
-  padding: 5%;
+    background-color: #171616;
+    color: white;
+    border: 0.5px solid white;
+    font-weight: 100;
+    font-size: 13px;
+    padding: 5%;
 }
 
 .bottleservice-form-control::placeholder {
-  color: white;
+    color: white;
 }
 
 .form-control::placeholder {
-  color: white;
+    color: white;
 }
 
 .bottleservice-form-submit {
-  background-color: rgb(183, 169, 90);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    background-color: rgb(183, 169, 90);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .bottleservice-form-submit:hover {
-  background-color: rgb(149, 137, 67);
+    background-color: rgb(149, 137, 67);
 }
 
 .bottleservice-form-submit:active {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.2
-  ); /* Darker background when clicked */
-  transform: scale(0.98); /* Slightly smaller scale to mimic a pressed effect */
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.2
+    ); /* Darker background when clicked */
+    transform: scale(
+        0.98
+    ); /* Slightly smaller scale to mimic a pressed effect */
 }
 
 @media screen and (max-width: 780px) {
-  .bottleservice-page-container {
-    padding-top: 15%;
-  }
+    .bottleservice-page-container {
+        padding-top: 15%;
+    }
 }
