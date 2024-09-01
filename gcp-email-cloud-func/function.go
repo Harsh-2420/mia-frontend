@@ -23,7 +23,7 @@ type BottleServiceRequest struct {
 
 const TO_EMAIL = "gmsmentertainment@gmail.com"
 const FROM_EMAIL = "requests.miatoronto@gmail.com"
-const APP_PWD = "dhkq zogx yili vnxm"
+const APP_PWD = "<PASSWORD_HERE>"
 const BOT_GUARD_TOKEN = "7808268234724109486" // some random value to avoid bots triggering this URL and causing issues
 
 const EMAIL_HEAD = `
