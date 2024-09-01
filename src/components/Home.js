@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Row, Col, Card, Carousel, Container } from "react-bootstrap"
+import { useNavigate } from "react-router-dom" // If you are using react-router for routing
+
 import "bootstrap/dist/css/bootstrap.min.css"
 import miaVid from "../assets/Mia 2.mp4"
 import miaCarousel from "../assets/Mia 7.JPG"
@@ -139,6 +141,11 @@ function Events() {
     )
 }
 function Hero() {
+    const navigate = useNavigate() // Updated hook
+
+    const handleClick = (path) => () => {
+        navigate(path) // Use navigate with the provided path
+    }
     return (
         <section id="events" className="section events">
             <div className="mia-logo-overlay"></div>{" "}
@@ -168,8 +175,18 @@ function Hero() {
                     </video>
                 </div>
                 <div className="hero-page-button-container">
-                    <button className="hero-page-button">Events</button>
-                    <button className="hero-page-button">Booths</button>
+                    <button
+                        className="hero-page-button"
+                        onClick={handleClick("/events")}
+                    >
+                        Events
+                    </button>
+                    <button
+                        className="hero-page-button"
+                        onClick={handleClick("/bottleservice")}
+                    >
+                        Booths
+                    </button>
                 </div>
             </div>
         </section>

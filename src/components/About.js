@@ -7,6 +7,8 @@ import {
     FaChevronDown,
     FaChevronUp,
 } from "react-icons/fa"
+import { useNavigate } from "react-router-dom" // Updated import
+
 import miaAboutImg from "../assets/Mia 8.JPG"
 import miaCarousel from "../assets/Mia 7.JPG"
 import miaCarousel2 from "../assets/Mia 8.JPG"
@@ -39,6 +41,12 @@ function About() {
     const [openLocation, setOpenLocation] = useState(false)
     const [openContact, setOpenContact] = useState(false)
     const isMobile = useIsMobile() // use the hook to check if it's mobile
+
+    const navigate = useNavigate() // Updated hook
+
+    const handleClick = (path) => () => {
+        navigate(path) // Use navigate with the provided path
+    }
 
     return (
         <div class="about-page-container">
@@ -80,7 +88,10 @@ function About() {
                                 </span>
 
                                 <div className="packages-button-container">
-                                    <button className="packages-button">
+                                    <button
+                                        className="packages-button"
+                                        onClick={handleClick("/contact")}
+                                    >
                                         Connect with Us
                                     </button>
                                 </div>
