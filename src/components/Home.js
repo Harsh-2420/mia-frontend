@@ -91,7 +91,7 @@ function Events() {
                             <div key={event.id} mb={4}>
                                 <Card
                                     className="event-card"
-                                    style={{ height: "100%", width: "400px" }}
+                                    style={{ height: "100%", width: "300px" }}
                                 >
                                     <Card.Img
                                         variant="top"
@@ -150,7 +150,7 @@ function Hero() {
         <section id="events" className="section events">
             <div className="mia-logo-overlay"></div>{" "}
             <div className="welcome">
-                <div className="page-title mia-cursive">
+                <div className="page-title mia-cursive d-flex flex-wrap">
                     welcome to
                     <img
                         src={logo}

@@ -189,41 +189,38 @@ function GuestlistForm() {
 function Guestlist() {
     return (
         <div class="guestlist-page-container">
-            <Row style={{ paddingTop: "5%" }}>
-                <h1>
-                    <span className="mia-cursive">Join Our </span>
-                    <span className="mia-rock-salt">Guestlist</span>
+            <div
+                className="d-flex flex-wrap justify-content-center"
+                style={{ paddingTop: "5%", width: "100%" }}
+            >
+                <h1 className="mia-cursive">Join Our </h1>
+                <h1 className="mia-rock-salt " style={{ marginLeft: "10px" }}>
+                    Guestlist
                 </h1>
-            </Row>
-            <Row style={{ padding: "5%" }}>
+            </div>
+            <Row style={{ padding: "5%", margin: "0" }}>
                 <Col
                     md={4}
+                    xs={12}
                     // className="guestlist-box-image"
                 >
                     <Image
                         src={miaAboutImg}
                         alt="Club Mia Image"
                         style={{
-                            maxWidth: "300px",
+                            width: "100%",
                             border: "1px solid white",
                             borderRadius: "15px",
                             margin: "3%",
+                            alignItems: "center",
                         }}
-                    />
-                    <Image
-                        src={miaAboutImg}
-                        alt="Club Mia Image"
-                        style={{
-                            maxWidth: "300px",
-                            border: "1px solid white",
-                            borderRadius: "15px",
-                            margin: "3%",
-                        }}
+                        className="guestlist-image"
                     />
                 </Col>
-                <Col md={1}></Col>
+                <Col md={1} xs={12}></Col>
                 <Col
                     md={7}
+                    xs={12}
                     // className="guestlist-box"
                 >
                     <Row className="text-center py-5">

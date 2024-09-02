@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 170vh;
     overflow: hidden; /* Ensure no scrollbars if video is larger */
     position: relative; /* Required for absolute positioning of overlay */
     background-image: url("../assets/Mia 9.JPG"); /* Add your background image */
@@ -87,13 +87,16 @@
 /* Media queries for responsive design */
 @media (max-width: 768px) {
     .section {
-        :80px ; /* Adjust for smaller screens if the navbar height changes */
+        min-height: 80vh;
     }
 }
 
 @media (max-width: 480px) {
     .section {
-        :100px ; /* Adjust further for very small screens if needed */
+        min-height: 80vh;
+    }
+    .hero-page-button-container {
+        margin: 7%;
     }
 }
 
@@ -108,9 +111,9 @@
 }
 
 .hero-page-button-container {
-    :20px ;
     display: flex;
     justify-content: center;
+    margin: 3%;
 }
 
 .hero-page-button {

@@ -25,18 +25,18 @@ function Contact() {
                     <br />
                     <div className="icons-container">
                         <a
-                            href="mailto:info@nightclub.com"
+                            href="mailto:info.mia@gmsms.com"
                             className="icon-link"
                         >
                             <FaEnvelope />
                         </a>
                         <a
-                            href="https://www.instagram.com/nightclub"
+                            href="https://www.instagram.com/miatoronto_/"
                             className="icon-link"
                         >
                             <FaInstagram />
                         </a>
-                        <a href="tel:+1234567890" className="icon-link">
+                        <a href="tel:+14163459095" className="icon-link">
                             <FaPhone />
                         </a>
                     </div>
@@ -53,7 +53,7 @@ function Contact() {
                                     Contact Number
                                 </span>
                                 <p className="contact-info-desc">
-                                    +123 456 7890
+                                    +1 (416)-434-6092
                                 </p>
                             </div>
                         </Col>
@@ -65,7 +65,7 @@ function Contact() {
                                     Location
                                 </span>
                                 <p className="contact-info-desc">
-                                    123 Nightclub Avenue, Party City
+                                    244 Adelaide St W, Toronto
                                 </p>
                             </div>
                         </Col>
