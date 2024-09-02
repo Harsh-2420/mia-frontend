@@ -30,7 +30,7 @@ async function SendEmail(
         )
 
         if (!res.ok) {
-            const errMsg = res.text()
+            const errMsg = await res.text()
             console.log("Error sending email: ", errMsg)
             return { success: false, msg: errMsg }
         }
