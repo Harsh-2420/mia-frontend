@@ -48,6 +48,7 @@ function Home() {
 
 function Events() {
     const [events, setEvents] = React.useState([])
+
     const truncateText = (text, maxLength) => {
         if (text.length > maxLength) {
             return text.slice(0, maxLength) + "..."
@@ -87,53 +88,58 @@ function Events() {
                         <h1 className="mia-rock-salt">EVENTS</h1>
                     </div>
                     <div className="d-flex gap-4 align-content-stretch flex-wrap justify-content-center">
-                        {events.map((event) => (
-                            <div key={event.id} mb={4}>
-                                <Card
-                                    className="event-card"
-                                    style={{ height: "100%", width: "300px" }}
-                                >
-                                    <Card.Img
-                                        variant="top"
-                                        src={`${BUCKET_URL}/${event.image}`}
-                                        style={{ height: "50%" }}
-                                    />
-                                    <Card.Body
+                        {events
+                            .sort((a, b) => new Date(b.time) - new Date(a.time))
+                            .map((event) => (
+                                <div key={event.id}>
+                                    <Card
+                                        className="event-card"
                                         style={{
-                                            backgroundColor: "black",
-                                            color: "white",
+                                            height: "100%",
+                                            width: "300px",
                                         }}
                                     >
-                                        <Card.Title
-                                            className="mia-rock-salt"
+                                        <Card.Img
+                                            variant="top"
+                                            src={`${BUCKET_URL}/${event.image}`}
+                                            style={{ height: "50%" }}
+                                        />
+                                        <Card.Body
                                             style={{
-                                                margin: "5%",
-                                                color: "rgb(183, 169, 90)",
+                                                backgroundColor: "black",
+                                                color: "white",
                                             }}
                                         >
-                                            {event.title}
-                                        </Card.Title>
-                                        <Card.Text>
-                                            {truncateText(event.desc)}
-                                        </Card.Text>
-                                        <Card.Text>
-                                            Date: {event.time}
-                                        </Card.Text>
-                                        <div
-                                            className="hero-page-button-container"
-                                            style={{ marginLeft: "15px" }}
-                                        >
-                                            <button
-                                                className="hero-page-button"
-                                                style={{ fontSize: "14px" }}
+                                            <Card.Title
+                                                className="mia-rock-salt"
+                                                style={{
+                                                    margin: "5%",
+                                                    color: "rgb(183, 169, 90)",
+                                                }}
                                             >
-                                                Buy Tickets
-                                            </button>
-                                        </div>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                        ))}
+                                                {event.title}
+                                            </Card.Title>
+                                            <Card.Text>
+                                                {truncateText(event.desc)}
+                                            </Card.Text>
+                                            <Card.Text>
+                                                Date: {event.time}
+                                            </Card.Text>
+                                            <div
+                                                className="hero-page-button-container"
+                                                style={{ marginLeft: "15px" }}
+                                            >
+                                                <button
+                                                    className="hero-page-button"
+                                                    style={{ fontSize: "14px" }}
+                                                >
+                                                    Buy Tickets
+                                                </button>
+                                            </div>
+                                        </Card.Body>
+                                    </Card>
+                                </div>
+                            ))}
                     </div>
                 </div>
             </Container>
@@ -150,8 +156,8 @@ function Hero() {
         <section id="events" className="section events">
             <div className="mia-logo-overlay"></div>{" "}
             <div className="welcome">
-                <div className="page-title mia-cursive d-flex flex-wrap">
-                    welcome to
+                <div className="page-title d-flex flex-wrap">
+                    <div className="mia-cursive">welcome to</div>
                     <img
                         src={logo}
                         alt="Club Logo"
@@ -275,31 +281,34 @@ function MiaCarousel() {
 }
 function MiaCarouselPhone() {
     return (
-        <section className="carousel-phone-section">
+        <section className="d-flex carousel-phone-section">
             <div className="carousel-phone-overlay"></div>
-            <Carousel
-                indicators={false}
-                controls={true}
-                interval={null}
-                slide={true}
-                items={8}
-                slidesPerView={1}
-            >
-                <Carousel.Item>
-                    <img
-                        className="d-block custom-carousel-phone-item"
-                        src={miaCarousel}
-                        alt="First slide"
-                    />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block custom-carousel-phone-item"
-                        src={miaCarousel5}
-                        alt="First slide"
-                    />
-                </Carousel.Item>
-            </Carousel>
+
+            <div className="d-flex justify-content-center w-100">
+                <Carousel
+                    indicators={false}
+                    controls={true}
+                    interval={null}
+                    slide={true}
+                    items={8}
+                    slidesPerView={1}
+                >
+                    <Carousel.Item>
+                        <img
+                            className="custom-carousel-phone-item"
+                            src={miaCarousel}
+                            alt="First slide"
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="custom-carousel-phone-item"
+                            src={miaCarousel5}
+                            alt="First slide"
+                        />
+                    </Carousel.Item>
+                </Carousel>
+            </div>
         </section>
     )
 }

@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 170vh;
+    min-height: 90vh;
     overflow: hidden; /* Ensure no scrollbars if video is larger */
     position: relative; /* Required for absolute positioning of overlay */
     background-image: url("../assets/Mia 9.JPG"); /* Add your background image */
@@ -87,13 +87,13 @@
 /* Media queries for responsive design */
 @media (max-width: 768px) {
     .section {
-        min-height: 80vh;
+        /* min-height: 80vh; */
     }
 }
 
 @media (max-width: 480px) {
     .section {
-        min-height: 80vh;
+        /* min-height: 80vh; */
     }
     .hero-page-button-container {
         margin: 7%;

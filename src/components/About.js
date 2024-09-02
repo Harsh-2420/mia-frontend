@@ -196,14 +196,14 @@ function MiaCarouselPhone() {
         >
             <Carousel.Item>
                 <img
-                    className="d-block custom-carousel-phone-item"
+                    className=" custom-carousel-phone-item"
                     src={miaCarousel}
                     alt="First slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                    className="d-block custom-carousel-phone-item"
+                    className=" custom-carousel-phone-item"
                     src={miaCarousel5}
                     alt="First slide"
                 />
