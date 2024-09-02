@@ -61,7 +61,25 @@ function BottleserviceForm() {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("Form submitted:", formData)
+        SendBottleserviceRequest(
+            formData.firstName,
+            formData.lastName,
+            formData.date,
+            formData.contact,
+            formData.email,
+            formData.maleAttendees,
+            formData.femaleAttendees,
+            formData.comments
+        ).then((res) => {
+            if (res.success)
+            {
+                console.log("Form submitted:", formData);
+                // TODO: report success to user
+            } else {
+                console.log("Error sending email - ", res.msg);
+                // TODO: report failure to user
+            }
+        })
     }
     return (
         <>

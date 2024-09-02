@@ -10,7 +10,7 @@ import (
 	"github.com/go-mail/mail"
 )
 
-type BottleServiceRequest struct {
+type EmailRequest struct {
 	FirstName   string
 	LastName    string
 	MaleCount   int
@@ -84,7 +84,7 @@ const EMAIL_HEAD = `
 const EMAIL_BODY = `
 <body>
   <div class="container">
-    <h2>Bottle Service Request</h2>
+    <h2>%s</h2>
     <table>
       <tr>
         <th class="label">First Name</th>
@@ -128,15 +128,20 @@ const EMAIL_BODY = `
 </html>
 `
 
+const (
+	EMAIL_TYPE_BSR = "BottleService"
+	EMAIL_TYPE_GL  = "GuestList"
+)
+
 func init() {
 	functions.HTTP("SendEmail", SendEmail)
 }
 
-func GenerateEmailBody(b *BottleServiceRequest) string {
-	return EMAIL_HEAD + fmt.Sprintf(EMAIL_BODY, b.FirstName, b.LastName, b.MaleCount, b.FemaleCount, b.Date, b.Phone, b.Email, b.Comments)
+func GenerateEmailBody(b *EmailRequest, title string) string {
+	return EMAIL_HEAD + fmt.Sprintf(EMAIL_BODY, title, b.FirstName, b.LastName, b.MaleCount, b.FemaleCount, b.Date, b.Phone, b.Email, b.Comments)
 }
 
-func ValidateRequest(b *BottleServiceRequest) bool {
+func ValidateRequest(b *EmailRequest) bool {
 	valid := len(b.FirstName) > 0
 	valid = valid && len(b.Phone) > 0
 	valid = valid && len(b.Date) > 0
@@ -168,7 +173,6 @@ func SendEmail(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Printf("Got request from %s\n", r.RemoteAddr)
 
-	var bsr BottleServiceRequest
 	body, err := io.ReadAll(r.Body)
 	if err != nil {
 		fmt.Printf("Unable to read body %s\n", err)
@@ -178,21 +182,35 @@ func SendEmail(w http.ResponseWriter, r *http.Request) {
 
 	defer r.Body.Close()
 
-	json.Unmarshal(body, &bsr)
-	if !ValidateRequest(&bsr) {
+	var erq EmailRequest
+	var title string
+
+	requestType := r.URL.Query().Get("type")
+	if requestType == EMAIL_TYPE_BSR {
+		title = "Bottle Service Request"
+	} else if requestType == EMAIL_TYPE_GL {
+		title = "Guest List"
+	} else {
+		fmt.Printf("Missing email request type or invalid type - %s\n", requestType)
+		http.Error(w, "Bad Request", http.StatusBadRequest)
+		return
+	}
+
+	json.Unmarshal(body, &erq)
+	if !ValidateRequest(&erq) {
 		fmt.Println("Invalid form params")
 		http.Error(w, "Invalid form params - Name, Phone, Date required", http.StatusBadRequest)
 		return
 	}
 
-	subject := fmt.Sprintf("Bottle Service Request: %s | %s %s (%s)", bsr.Date, bsr.FirstName, bsr.LastName, bsr.Phone)
+	subject := fmt.Sprintf("%s: %s | %s %s (%s)", title, erq.Date, erq.FirstName, erq.LastName, erq.Phone)
 	fmt.Printf("Creating email with subject %s\n", subject)
 
 	m := mail.NewMessage()
 	m.SetHeader("From", FROM_EMAIL)
 	m.SetHeader("To", TO_EMAIL)
 	m.SetHeader("Subject", subject)
-	m.SetBody("text/html", GenerateEmailBody(&bsr))
+	m.SetBody("text/html", GenerateEmailBody(&erq, title))
 
 	d := mail.NewDialer("smtp.gmail.com", 587, FROM_EMAIL, APP_PWD)
 	if err := d.DialAndSend(m); err != nil {
