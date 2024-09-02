@@ -8,36 +8,36 @@ metadata:
   labels:
     cloud.googleapis.com/location: us-east1
   name: mia-website
-  namespace: '243611978051'
+  namespace: "243611978051"
 spec:
   template:
     metadata:
       annotations:
-        autoscaling.knative.dev/maxScale: '2'
+        autoscaling.knative.dev/maxScale: "2"
         run.googleapis.com/client-name: cloud-console
-        run.googleapis.com/startup-cpu-boost: 'true'
+        run.googleapis.com/startup-cpu-boost: "true"
       labels:
         run.googleapis.com/startupProbeType: Default
     spec:
       containerConcurrency: 80
       containers:
-      - image: us-east1-docker.pkg.dev/mia-website-project/mia-website-images/mia-website:latest
-        name: mia-website-1
-        ports:
-        - containerPort: 3000
-          name: http1
-        resources:
-          limits:
-            cpu: 1000m
-            memory: 512Mi
-        startupProbe:
-          failureThreshold: 1
-          periodSeconds: 240
-          tcpSocket:
-            port: 3000
-          timeoutSeconds: 240
+        - image: us-east1-docker.pkg.dev/mia-website-project/mia-website-images/mia-website:latest
+          name: mia-website-1
+          ports:
+            - containerPort: 3000
+              name: http1
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 512Mi
+          startupProbe:
+            failureThreshold: 1
+            periodSeconds: 240
+            tcpSocket:
+              port: 3000
+            timeoutSeconds: 240
       serviceAccountName: 243611978051-compute@developer.gserviceaccount.com
-      timeoutSeconds: 300
+      timeoutSeconds: 299
   traffic:
-  - latestRevision: true
-    percent: 100
+    - latestRevision: true
+      percent: 100
