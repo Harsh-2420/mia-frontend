@@ -65,7 +65,10 @@ function BottleserviceForm() {
     }
     return (
         <>
-            <Form onSubmit={handleSubmit} className="form-container">
+            <Form
+                onSubmit={handleSubmit}
+                className="bottleservice-form-container"
+            >
                 <Row
                     style={{
                         paddingBottom: "3%",
@@ -73,7 +76,7 @@ function BottleserviceForm() {
                 >
                     <Col xs={6}>
                         <Form.Group
-                            className="bottlservice-form-group"
+                            className="bottleservice-form-group"
                             controlId="formName"
                         >
                             <Form.Control
@@ -88,7 +91,7 @@ function BottleserviceForm() {
                     </Col>
                     <Col xs={6}>
                         <Form.Group
-                            className="bottlservice-form-group"
+                            className="bottleservice-form-group"
                             controlId="formPeople"
                         >
                             <Form.Control
@@ -109,7 +112,7 @@ function BottleserviceForm() {
                 >
                     <Col xs={6}>
                         <Form.Group
-                            className="bottlservice-form-group"
+                            className="bottleservice-form-group"
                             controlId="formMaleAttendees"
                         >
                             <Form.Control
@@ -124,7 +127,7 @@ function BottleserviceForm() {
                     </Col>
                     <Col xs={6}>
                         <Form.Group
-                            className="bottlservice-form-group"
+                            className="bottleservice-form-group"
                             controlId="formFemaleAttendees"
                         >
                             <Form.Control
@@ -145,7 +148,7 @@ function BottleserviceForm() {
                 >
                     <Col xs={6}>
                         <Form.Group
-                            className="bottlservice-form-group"
+                            className="bottleservice-form-group"
                             controlId="formDate"
                         >
                             <Form.Control
@@ -159,7 +162,7 @@ function BottleserviceForm() {
                     </Col>
                     <Col xs={6}>
                         <Form.Group
-                            className="bottlservice-form-group"
+                            className="bottleservice-form-group"
                             controlId="formContact"
                         >
                             <Form.Control
@@ -180,7 +183,7 @@ function BottleserviceForm() {
                 >
                     <Col xs={12}>
                         <Form.Group
-                            className="guestlist-form-group"
+                            className="bottleservice-form-group"
                             controlId="formEmail"
                         >
                             <Form.Control
@@ -192,7 +195,7 @@ function BottleserviceForm() {
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className="guestlist-form-control"
+                                className="bottleservice-form-control"
                             />
                         </Form.Group>
                     </Col>
@@ -204,7 +207,7 @@ function BottleserviceForm() {
                 >
                     <Col xs={12}>
                         <Form.Group
-                            className="bottlservice-form-group"
+                            className="bottleservice-form-group"
                             controlId="formComments"
                         >
                             <Form.Control
@@ -230,77 +233,68 @@ function BottleserviceForm() {
 function Bottleservice() {
     return (
         <div class="bottleservice-page-container">
-            <Row style={{ color: "white" }}>
-                <div style={{ textAlign: "center" }}>
-                    <div
-                        style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            padding: "5%",
-                            borderRadius: "10px",
-                        }}
-                    >
-                        <div style={{ width: "80%", maxWidth: "800px" }}>
-                            <h2
-                                className="mia-cursive mia-accent"
-                                style={{ textAlign: "center" }}
-                            >
-                                Secure a{" "}
-                                <span className="mia-rock-salt">Booth</span>
-                            </h2>
-                            <p
-                                style={{
-                                    color: "white",
-                                    textAlign: "center",
-                                    margin: "20px 0",
-                                }}
-                            >
-                                Looking to enjoy the night in style, a booth at
-                                Mia, ensures you have a front-row seat to all
-                                the action. Our booths offer the perfect blend
-                                of comfort, privacy, and exclusivity, making
-                                them the ideal choice for those who want to
-                                experience the best of Toronto nightlife.
-                                <br></br>
-                                <br></br>
-                                To reserve your booth please fill out this form
-                                and one of the team members will reach out to
-                                you.
-                            </p>
-                        </div>
+            <div style={{ textAlign: "center" }}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        padding: "5%",
+                        borderRadius: "10px",
+                    }}
+                >
+                    <div style={{ width: "80%", maxWidth: "800px" }}>
+                        <h2
+                            className="mia-cursive mia-accent"
+                            style={{ textAlign: "center" }}
+                        >
+                            Secure a{" "}
+                            <span className="mia-rock-salt">Booth</span>
+                        </h2>
+                        <p
+                            style={{
+                                color: "white",
+                                textAlign: "center",
+                                margin: "20px 0",
+                            }}
+                        >
+                            Looking to enjoy the night in style, a booth at Mia,
+                            ensures you have a front-row seat to all the action.
+                            Our booths offer the perfect blend of comfort,
+                            privacy, and exclusivity, making them the ideal
+                            choice for those who want to experience the best of
+                            Toronto nightlife.
+                            <br></br>
+                            <br></br>
+                            To reserve your booth please fill out this form and
+                            one of the team members will reach out to you.
+                        </p>
                     </div>
                 </div>
-            </Row>
-            <Row style={{ padding: "5%" }}>
+            </div>
+            <Row style={{ padding: "5%", margin: "0" }}>
                 <Col
                     md={4}
-                    // className="bottlservice-box-image"
+                    xs={12}
+                    // className="bottleservice-box-image"
                 >
                     <Image
                         src={miaAboutImg}
                         alt="Club Mia Image"
                         style={{
-                            maxWidth: "300px",
+                            width: "100%",
                             border: "1px solid white",
                             borderRadius: "15px",
                             margin: "3%",
+                            alignItems: "center",
                         }}
-                    />
-                    <Image
-                        src={miaAboutImg}
-                        alt="Club Mia Image"
-                        style={{
-                            maxWidth: "300px",
-                            border: "1px solid white",
-                            borderRadius: "15px",
-                            margin: "3%",
-                        }}
+                        className="bottleservice-image"
                     />
                 </Col>
-                <Col md={1}></Col>
+                <Col md={1} xs={12}></Col>
                 <Col
                     md={7}
+                    xs={12}
                     // className="bottleservice-box"
                 >
                     <Row className="text-center py-5">
