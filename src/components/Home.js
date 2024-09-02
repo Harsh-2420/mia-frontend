@@ -51,7 +51,7 @@ function Events() {
   const navigate = useNavigate(); // Updated hook
 
   const handleClick = (path) => () => {
-    navigate(path); // Use navigate with the provided path
+    window.location.href = path; // Use navigate with the provided path
   };
   const truncateText = (text, maxLength) => {
     if (text.length > maxLength) {
@@ -92,56 +92,63 @@ function Events() {
             <h1 className="mia-rock-salt">EVENTS</h1>
           </div>
           <div className="d-flex gap-4 align-content-stretch flex-wrap justify-content-center">
-            {events
-              .sort((a, b) => new Date(a.time) - new Date(b.time))
-              .slice(0, 3)
-              .map((event) => (
-                <div key={event.id}>
-                  <Card
-                    className="event-card"
-                    style={{
-                      height: "100%",
-                      width: "300px",
-                    }}
-                  >
-                    <Card.Img
-                      variant="top"
-                      src={`${BUCKET_URL}/${event.image}`}
-                      style={{ height: "50%" }}
-                    />
-                    <Card.Body
+            {events.filter((event) => new Date(event.time) > new Date())
+              .length ? (
+              events
+                .filter((event) => new Date(event.time) > new Date())
+                .sort((a, b) => new Date(a.time) - new Date(b.time))
+                .map((event) => (
+                  <div key={event.id}>
+                    <Card
+                      className="event-card"
                       style={{
-                        backgroundColor: "black",
-                        color: "white",
+                        height: "100%",
+                        width: "300px",
                       }}
                     >
-                      <Card.Title
-                        className="mia-rock-salt"
+                      <Card.Img
+                        variant="top"
+                        src={`${BUCKET_URL}/${event.image}`}
+                        style={{ height: "50%" }}
+                      />
+                      <Card.Body
                         style={{
-                          margin: "5%",
-                          color: "rgb(183, 169, 90)",
+                          backgroundColor: "black",
+                          color: "white",
                         }}
                       >
-                        {event.title}
-                      </Card.Title>
-                      <Card.Text>{truncateText(event.desc)}</Card.Text>
-                      <Card.Text>Date: {event.time}</Card.Text>
-                      <div
-                        className="hero-page-button-container"
-                        style={{ marginLeft: "15px" }}
-                      >
-                        <button
-                          className="hero-page-button"
-                          style={{ fontSize: "14px" }}
-                          onClick={handleClick(event.url)}
+                        <Card.Title
+                          className="mia-rock-salt"
+                          style={{
+                            margin: "5%",
+                            color: "rgb(183, 169, 90)",
+                          }}
                         >
-                          Buy Tickets
-                        </button>
-                      </div>
-                    </Card.Body>
-                  </Card>
-                </div>
-              ))}
+                          {event.title}
+                        </Card.Title>
+                        <Card.Text>{truncateText(event.desc)}</Card.Text>
+                        <Card.Text>Date: {event.time}</Card.Text>
+                        <div
+                          className="hero-page-button-container"
+                          style={{ marginLeft: "15px" }}
+                        >
+                          <button
+                            className="hero-page-button"
+                            style={{ fontSize: "14px" }}
+                            onClick={handleClick(event.url)}
+                          >
+                            Buy Tickets
+                          </button>
+                        </div>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                ))
+            ) : (
+              <span className="mia-accent">
+                No events available at this time
+              </span>
+            )}
           </div>
         </div>
       </Container>
