@@ -3,6 +3,7 @@ import { Form, Button, Row, Col, Image } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../css/Guestlist.css"
 import miaAboutImg from "../assets/Mia 8.JPG"
+import { SendGuestListRequest } from "../common/Email"
 
 function GuestlistForm() {
     const [formData, setFormData] = useState({
@@ -20,7 +21,25 @@ function GuestlistForm() {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("Form submitted:", formData)
+        SendGuestListRequest(
+            formData.firstName,
+            formData.lastName,
+            formData.date,
+            formData.contact,
+            formData.email,
+            formData.maleAttendees,
+            formData.femaleAttendees,
+            formData.comments
+        ).then((res) => {
+            if (res.success)
+            {
+                console.log("Form submitted:", formData);
+                // TODO: report success to user
+            } else {
+                console.log("Error sending email - ", res.msg);
+                // TODO: report failure to user
+            }
+        })
     }
     return (
         <>

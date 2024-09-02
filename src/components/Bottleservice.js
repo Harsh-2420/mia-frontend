@@ -3,47 +3,7 @@ import { Form, Button, Row, Col, Image } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../css/Bottleservice.css"
 import miaAboutImg from "../assets/Mia 8.JPG"
-
-async function SendBottleserviceRequest(
-    firstName,
-    lastName,
-    date,
-    phone,
-    email,
-    maleCount,
-    femaleCount,
-    comments
-) {
-    try {
-        const token = "7808268234724109486"
-        const res = await fetch(
-            `https://us-east1-mia-website-project.cloudfunctions.net/send-email-func?token=${token}`,
-            {
-                method: "POST",
-                body: JSON.stringify({
-                    FirstName: firstName,
-                    LastName: lastName,
-                    MaleCount: Number(maleCount),
-                    FemaleCount: Number(femaleCount),
-                    Date: date,
-                    Phone: phone,
-                    Email: email,
-                    Comments: comments,
-                }),
-            }
-        )
-
-        if (!res.ok) {
-            const errMsg = res.text()
-            console.log("Error sending email: ", errMsg)
-            return { success: false, msg: errMsg }
-        }
-
-        return { success: true, msg: "Request Sent" }
-    } catch (err) {
-        return { success: false, msg: String(err) }
-    }
-}
+import { SendBottleserviceRequest } from "../common/Email"
 
 function BottleserviceForm() {
     const [formData, setFormData] = useState({
