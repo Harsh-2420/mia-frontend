@@ -250,28 +250,29 @@ function MiaCarousel() {
             <div className="col-3">
               <img
                 className="d-block w-100 custom-carousel-item"
-                src={miaCarousel5}
-                alt="First slide"
-              />
-            </div>
-            <div className="col-3">
-              <img
-                className="d-block w-100 custom-carousel-item"
-                src={miaCarousel6}
-                alt="Second slide"
-              />
-            </div>
-            <div className="col-3">
-              <img
-                className="d-block w-100 custom-carousel-item"
-                src={miaCarousel7}
+                src={miaCarousel8}
                 alt="Third slide"
               />
             </div>
             <div className="col-3">
               <img
                 className="d-block w-100 custom-carousel-item"
-                src={miaCarousel8}
+                src={miaCarousel7}
+                alt="Fourth slide"
+              />
+            </div>
+
+            <div className="col-3">
+              <img
+                className="d-block w-100 custom-carousel-item"
+                src={miaCarousel6}
+                alt="Fourth slide"
+              />
+            </div>
+            <div className="col-3">
+              <img
+                className="d-block w-100 custom-carousel-item"
+                src={miaCarousel5}
                 alt="Fourth slide"
               />
             </div>
@@ -298,7 +299,7 @@ function MiaCarouselPhone() {
           <Carousel.Item>
             <img
               className="custom-carousel-phone-item"
-              src={miaCarousel}
+              src={miaCarousel4}
               alt="First slide"
             />
           </Carousel.Item>
@@ -308,6 +309,27 @@ function MiaCarouselPhone() {
               src={miaCarousel5}
               alt="First slide"
             />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="custom-carousel-phone-item"
+              src={miaCarousel6}
+              alt="First slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="custom-carousel-phone-item"
+              src={miaCarousel7}
+              alt="First slide"
+            />
+            <Carousel.Item>
+              <img
+                className="custom-carousel-phone-item"
+                src={miaCarousel8}
+                alt="First slide"
+              />
+            </Carousel.Item>
           </Carousel.Item>
         </Carousel>
       </div>
