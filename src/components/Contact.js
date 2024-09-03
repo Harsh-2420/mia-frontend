@@ -125,7 +125,7 @@ function Contact() {
       <Row className="mt-5">
         <Col></Col>
         <Col md={6} className="contact-box">
-          <p>Email us at: info@nightclub.com</p>
+          <p>Email us at: info.mia@gmsms.com</p>
         </Col>
         <Col></Col>
       </Row>
