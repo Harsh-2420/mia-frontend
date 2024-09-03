@@ -3,7 +3,7 @@ import { Row, Col, Card, Carousel, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; // If you are using react-router for routing
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import miaVid from "../assets/Mia 2.mp4";
+import miaVid from "../assets/IMG26.mp4";
 import miaCarousel from "../assets/Mia 7.JPG";
 import miaCarousel2 from "../assets/Mia 8.JPG";
 import miaCarousel3 from "../assets/Mia 9.JPG";
